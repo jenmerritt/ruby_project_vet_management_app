@@ -1,0 +1,30 @@
+
+/* Menu Navigation */
+
+#menu {
+  width: 280px;
+  display: flex;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+
+.menu-item {
+  display: inline-block;
+  flex-grow: 1;
+}
+
+/* Landing Pages with tables */
+
+.flex-container {
+  display:flex;
+}
+
+.list-item {
+  display: inline-block;
+  flex-grow: 1;
+}
+
+.long-list-item{
+  display: inline-block;
+  flex-grow: 3;
+}
