@@ -17,7 +17,7 @@
       <td><%= animal.type %></td>
       <td><%= animal.owner.display_name %></td>
       <td><%= animal.vet.name %></td>
-      <td>Info</td>
+      <td><a href="/animals/<%= animal.id %>">Info</a></td>
       <td>Manage</td>
     </tr>
     <% end %>

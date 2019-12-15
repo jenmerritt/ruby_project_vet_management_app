@@ -1,0 +1,44 @@
+
+<div class="details-wrapper">
+  <table class="details-table">
+    <tr>
+      <td>First Name:</td>
+      <td><%= @owner.first_name.capitalize %></td>
+    </tr>
+    <tr>
+      <td>Last Name:</td>
+      <td><%= @owner.last_name.capitalize %></td>
+    </tr>
+    <tr>
+      <td>Status:</td>
+      <td><%= @owner.status %></td>
+    </tr>
+    <tr>
+      <td>Phone Number:</td>
+      <td><%= @owner.phone_number %></td>
+    </tr>
+    <tr>
+      <td>Address:</td>
+      <td><%= @owner.address %></td>
+    </tr>
+    <tr>
+      <td>Postcode:</td>
+      <td><%= @owner.postcode %></td>
+    </tr>
+    <tr>
+      <td>Notes:</td>
+      <td><%= @owner.notes %></td>
+    </tr>
+    <tr>
+      <td>Animals:</td>
+      <td><% animals = @owner.animals %>
+      <% for animal in animals %>
+      <%= "#{animal.name} (Patient ID:#{animal.id})" %>
+      <br/>
+      <% end %></td>
+    </tr>
+    <tr>
+      <td><a href = "/owners/<%= @owner.id %>/edit">Update Details</a></td>
+    </tr>
+  </table>
+</div>

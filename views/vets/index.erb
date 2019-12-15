@@ -10,7 +10,7 @@
       <td><%= vet.name.capitalize %></td>
       <td><%= vet.mobile %></td>
       <td><%= vet.animal_category %></td>
-      <td>Details</td>
+      <td><a href="/vets/<%= vet.id %>">Details</a></td>
       <td>Manage</td>
     </tr>
     <% end %>

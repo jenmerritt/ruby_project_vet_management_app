@@ -68,3 +68,20 @@
   padding: 20px;
   vertical-align: top;
 }
+
+/* Show pages */
+
+.details-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  max-width:500px;
+}
+
+.details-table {
+  width: 100%;
+}
+
+.details-table td{
+  padding:10px;
+}

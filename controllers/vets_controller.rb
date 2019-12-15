@@ -7,3 +7,8 @@ get '/vets' do
   @vets = Vet.all
   erb(:"vets/index")
 end
+
+get '/vets/:id' do
+  @vet = Vet.find(params[:id])
+  erb (:"vets/show")
+end
