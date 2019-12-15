@@ -12,10 +12,12 @@
       <td>
         <% animals = owner.animals %>
         <% for animal in animals %>
-        <%= animal.name %>
+        <%= "#{animal.name} (Patient ID:#{animal.id})" %>
         <br/>
         <% end %>
       </td>
+      <td>Details</td>
+      <td>Manage</td>
     </tr>
       <% end %>
   </table>
