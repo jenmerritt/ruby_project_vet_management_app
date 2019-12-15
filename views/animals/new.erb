@@ -1,0 +1,33 @@
+<form method="post" actions="/animals">
+  <label for="name">Name</label>
+  <input type="text" name="name">
+  <br>
+  <label for="dob">Date of Birth</label>
+  <input type="text" name="dob">
+  <br>
+  <label for="category">Category</label>
+  <select name="category">
+    <option value="Large">Large</option>
+    <option value="Small">Small</option>
+  </select>
+  <br>
+  <label for="type">Type</label>
+  <input type="text" name="type">
+  <br>
+  <select name="owner_id">
+    <% for owner in @owners %>
+    <option value="<%=owner.id%>"><%= owner.display_name %></option>
+    <% end %>
+  </select>
+  <br>
+  <select name="vet_id">
+    <% for vet in @vets %>
+    <option value="<%=vet.id%>"><%= vet.name %></option>
+    <% end %>
+  </select>
+  <br>
+  <label for="treatment_notes">Treatment Notes</label>
+  <input type="text" name="treatment_notes">
+  <br>
+  <input type="submit" value="Register" class="buttons">
+</form>
