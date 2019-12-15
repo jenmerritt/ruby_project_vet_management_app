@@ -40,7 +40,8 @@ class Animal
   def self.all()
     sql = "SELECT * FROM animals;"
     results = SqlRunner.run(sql)
-    return results.map {|animal| Animal.new(animal)}
+    animals = map_items(results)
+    return animals
   end
 
   def self.find(id)
@@ -80,6 +81,10 @@ class Animal
   def self.delete_all()
     sql = "DELETE FROM animals;"
     SqlRunner.run(sql)
+  end
+
+  def self.map_items(animal_data)
+    return animal_data.map { |animal| Animal.new(animal) }
   end
 
 end

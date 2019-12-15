@@ -1,0 +1,13 @@
+<% for vet in @vets %>
+<ul>
+<li><%= vet.name %></li>
+<li><%= vet.mobile %></li>
+<li><%= vet.animal_category %></li>
+<li>
+  <% animals = vet.animals %>
+  <% for animal in animals %>
+  <%= animal.name  %>
+  <% end %>
+</li>
+</ul>
+<%end %>

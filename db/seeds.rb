@@ -151,5 +151,17 @@ animal5 = Animal.new({
 
 animal5.save()
 
+animal6 = Animal.new({
+  "name" => "Scruffy",
+  "dob" => "11/09/2017",
+  "category" => "small",
+  "type" => "rabbit",
+  "owner_id" => owner1.id,
+  "vet_id" => vet2.id,
+  "treatment_notes" => "Previous treatments include blah blah blah"
+  })
+
+animal6.save()
+
 binding.pry
 nil

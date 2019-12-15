@@ -40,7 +40,8 @@ class Owner
   def self.all()
     sql = "SELECT * FROM owners;"
     results = SqlRunner.run(sql)
-    return results.map {|owner| Owner.new(owner)}
+    owners = map_items(results)
+    return owners
   end
 
   def self.find(id)
@@ -50,6 +51,10 @@ class Owner
     owner_hash = results[0]
     owner = Owner.new(owner_hash)
     return owner
+  end
+
+  def display_name(owner)
+    return "#{owner.first_name} #{owner.last_name}" 
   end
 
   def update()
@@ -82,5 +87,8 @@ class Owner
     SqlRunner.run(sql)
   end
 
+  def self.map_items(owner_data)
+    return owner_data.map { |owner| Owner.new(owner) }
+  end
 
 end

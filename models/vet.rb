@@ -1,4 +1,5 @@
 require_relative( '../db/sql_runner' )
+require_relative('./animal')
 
 class Vet
 
@@ -32,7 +33,8 @@ class Vet
   def self.all()
     sql = "SELECT * FROM vets;"
     results = SqlRunner.run(sql)
-    return results.map {|vet| Vet.new(vet)}
+    vets = map_items(results)
+    return vets
   end
 
   def self.find(id)
@@ -42,6 +44,15 @@ class Vet
     vet_hash = results[0]
     vet = Vet.new(vet_hash)
     return vet
+  end
+
+  def animals()
+    sql = "SELECT * FROM animals
+    WHERE vet_id = $1;"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    animals = results.map {|animal| Animal.new(animal)}
+    return animals
   end
 
   def update()
@@ -68,6 +79,10 @@ class Vet
   def self.delete_all()
     sql = "DELETE FROM vets;"
     SqlRunner.run(sql)
+  end
+
+  def self.map_items(vet_data)
+    return vet_data.map { |vet| Vet.new(vet) }
   end
 
 end
