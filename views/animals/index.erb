@@ -1,11 +1,10 @@
-<% for animal in @animals %>
 <ul>
-<li><%= owner.display_name %></li>
-<li><%= owner.status.capitalize %></li>
-<li>
-  <% animals = owner.animals %>
-  <% for animal in animals %>
-  <%= animal.name %>
-  <% end %>
-</ul>
+<% for animal in animals %>
+  <li><%= animal.id %></li>
+  <li><%= animal.name %></li>
+  <li><%= animal.category %></li>
+  <li><%= animal.type %></li>
+  <li><%= animal.owner %></li>
+  <li><%= animal.vet %></li>
 <% end %>
+</ul>

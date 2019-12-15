@@ -53,6 +53,24 @@ class Animal
     return animal
   end
 
+  def owner()
+    sql = "SELECT * FROM owners WHERE id = $1;"
+    values = [@owner_id]
+    results = SqlRunner.run(sql, values)
+    owner_hash = results[0]
+    owner = Owner.new(owner_hash)
+    return owner
+  end
+
+  def vet()
+    sql = "SELECT * FROM vets WHERE id = $1;"
+    values = [@vet_id]
+    results = SqlRunner.run(sql, values)
+    vet_hash = results[0]
+    vet = Vet.new(vet_hash)
+    return vet
+  end
+
   def update()
     sql = "
     UPDATE animals SET (
