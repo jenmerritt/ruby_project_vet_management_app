@@ -53,8 +53,17 @@ class Owner
     return owner
   end
 
-  def display_name(owner)
-    return "#{owner.first_name} #{owner.last_name}" 
+  def display_name()
+    return "#{@first_name.capitalize} #{@last_name.capitalize}"
+  end
+
+  def animals()
+    sql = "SELECT * FROM animals
+    where owner_id = $1;"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    animals = results.map {|animal| Animal.new(animal)}
+    return animals
   end
 
   def update()
