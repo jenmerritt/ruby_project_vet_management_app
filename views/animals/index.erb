@@ -1,22 +1,25 @@
 <h1>Animals</h1>
-<table>
-  <tr>
-    <td>Patient ID</td>
-    <td>Name</td>
-    <td>Category</td>
-    <td>Type</td>
-    <td>Owner</td>
-    <td>Vet</td>
-  </tr>
-
-<% for animal in @animals %>
-<ul class="flex-container">
-    <td><%= animal.id %></td>
-    <td><%= animal.name %></td>
-    <li class="list-item"><%= animal.category %></li>
-    <li class="list-item"><%= animal.type %></li>
-    <li class="list-item"><%= animal.owner.display_name %></li>
-    <li class="list-item"><%= animal.vet.name %></li>
-  </ul>
-<% end %>
-</table>
+<div>
+  <table id="animals-table">
+    <tr>
+      <td>Patient ID</td>
+      <td>Name</td>
+      <td>Category</td>
+      <td>Type</td>
+      <td>Owner</td>
+      <td>Vet</td>
+    </tr>
+    <% for animal in @animals %>
+    <tr>
+      <td><%= animal.id %></td>
+      <td><%= animal.name %></td>
+      <td><%= animal.category %></td>
+      <td><%= animal.type %></td>
+      <td><%= animal.owner.display_name %></td>
+      <td><%= animal.vet.name %></td>
+      <td>Info</td>
+      <td>Manage</td>
+    </tr>
+    <% end %>
+  </table>
+</div>

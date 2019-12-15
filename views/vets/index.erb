@@ -1,8 +1,16 @@
 <h1>Vets</h1>
-<% for vet in @vets %>
-<ul>
-<li><%= vet.name.capitalize %></li>
-<li><%= vet.mobile %></li>
-<li><%= vet.animal_category %></li>
-</ul>
-<% end %>
+<div>
+  <table id="vets-table">
+    <tr>
+      <td>Name</td>
+      <td>Mobile</td>
+      <td>Animal Category</td>
+    <% for vet in @vets %>
+    <tr>
+      <td><%= vet.name.capitalize %></td>
+      <td><%= vet.mobile %></td>
+      <td><%= vet.animal_category %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>

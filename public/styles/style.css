@@ -1,3 +1,4 @@
+/* Homepage */
 
 /* Menu Navigation */
 
@@ -15,16 +16,28 @@
 
 /* Landing Pages with tables */
 
-.flex-container {
-  display:flex;
+#animals-table {
+  width: 100%;
 }
 
-.list-item {
-  display: inline-block;
-  flex-grow: 1;
+#animals-table td{
+  padding: 20px;
 }
 
-.long-list-item{
-  display: inline-block;
-  flex-grow: 3;
+#owners-table {
+  width: 100%;
+}
+
+#owners-table td{
+  padding: 20px;
+  vertical-align: top;
+}
+
+#vets-table {
+  width: 100%;
+}
+
+#vets-table td{
+  padding: 20px;
+  vertical-align: top;
 }

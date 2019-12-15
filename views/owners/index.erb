@@ -1,12 +1,22 @@
 <h1>Owners</h1>
-<% for owner in @owners %>
-<ul>
-<li><%= owner.display_name %></li>
-<li><%= owner.status.capitalize %></li>
-<li>
-  <% animals = owner.animals %>
-  <% for animal in animals %>
-  <%= animal.name %>
-  <% end %>
-</ul>
-<% end %>
+<div>
+  <table id="owners-table">
+    <tr>
+      <td>Name</td>
+      <td>Status</td>
+      <td>Animals</td>
+      <% for owner in @owners %>
+    <tr>
+      <td><%= owner.display_name %></td>
+      <td><%= owner.status.capitalize %></td>
+      <td>
+        <% animals = owner.animals %>
+        <% for animal in animals %>
+        <%= animal.name %>
+        <br/>
+        <% end %>
+      </td>
+    </tr>
+      <% end %>
+  </table>
+</div>
