@@ -37,9 +37,49 @@ class Animal
     @id = results[0]['id'].to_i
   end
 
+  def self.all()
+    sql = "SELECT * FROM animals;"
+    results = SqlRunner.run(sql)
+    return results.map {|animal| Animal.new(animal)}
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM animals WHERE id = $1;"
+    values = [id]
+    results = SqlRunner.run(sql, values)
+    animal_hash = results[0]
+    animal = Animal.new(animal_hash)
+    return animal
+  end
+
+  def update()
+    sql = "
+    UPDATE animals SET (
+      name,
+      dob,
+      category,
+      type,
+      owner_id,
+      vet_id,
+      treatment_notes
+    ) =
+    (
+      $1, $2, $3, $4, $5, $6, $7
+    )
+    WHERE id = $8;"
+    values = [@name, @dob, @category, @type, @owner_id, @vet_id, @treatment_notes, @id]
+    SqlRunner.run(sql, values)
+  end
+
+  def self.delete(id)
+    sql = "DELETE FROM animals where id = $1;"
+    values = [id]
+    SqlRunner.run(sql, values)
+  end
+
   def self.delete_all()
     sql = "DELETE FROM animals;"
-    SqlRunner.run( sql )
+    SqlRunner.run(sql)
   end
 
 end
