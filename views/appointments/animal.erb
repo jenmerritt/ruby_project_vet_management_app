@@ -1,5 +1,17 @@
-<% for appointment in @appointments %>
-<% if appointment.animal == @animal %>
-  <%= @animal.id %>
-<% end %>
-<% end %>
+<p><%=@animal.name%> appointments</p>
+<div>
+  <table id="appointments-table">
+    <tr>
+      <td>Date</td>
+      <td>Time</td>
+      <td>Vet</td>
+    <% for appointment in @appointments %>
+        <tr>
+          <td><%= appointment.date %></td>
+          <td><%= appointment.time %></td>
+          <td><a href="/appointments/vet/ <%= appointment.vet_id %>"><%= appointment.vet.name %></a></td>
+          <td><a href="/appointments/<%= appointment.id %>/edit">Manage</a></td>
+        </tr>
+    <% end %>
+  </table>
+</div>

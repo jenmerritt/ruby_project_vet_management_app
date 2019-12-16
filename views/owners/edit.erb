@@ -2,7 +2,7 @@
   <label for="status">Status</label>
   <select name="status">
     <option value="active" <%= 'selected' if @owner.status == "active" %>>Active</option>
-    <option value="inactive" <%= 'selected' if @owner.status == "active" %>>Inactive</option>
+    <option value="inactive" <%= 'selected' if @owner.status == "inactive" %>>Inactive</option>
   </select>
   <br>
   <label for="first_name">First Name</label>
@@ -21,7 +21,7 @@
   <input type="text" name="postcode" value="<%= @owner.postcode %>">
   <br>
   <label for="notes">Notes</label>
-  <textarea name="notes" rows="10" cols="30">@owner.notes</textarea>
+  <textarea name="notes" rows="10" cols="30"><%= @owner.notes %></textarea>
   <br>
   <input type="submit" value="Register" class="buttons">
 </form>

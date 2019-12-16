@@ -1,22 +1,17 @@
-<p><%= @vet.name %> Appointments</p>
-
-<div class="details-wrapper">
-  <table class="details-table">
+<p><%=@vet.name%> appointments</p>
+<div>
+  <table id="appointments-table">
     <tr>
       <td>Date</td>
       <td>Time</td>
-      <td>Patient ID</td>
-      <td>Patient Name</td>
-    </tr>
+      <td>Patient</td>
     <% for appointment in @appointments %>
-    <% if appointment.vet_id == @vet.id %>
-    <tr>
-      <td><%= appointment.date %></td>
-      <td><%= appointment.time %></td>
-      <td><%= appointment.animal_id %></td>
-      <td><% appointment.animal.name %></td>
-    </tr>
-    <% end %>
+        <tr>
+          <td><%= appointment.date %></td>
+          <td><%= appointment.time %></td>
+          <td><a href="/appointments/animal/ <%= appointment.animal_id %>"><%= appointment.animal.name %></td>
+          <td><a href="/appointments/<%= appointment.id %>/edit">Manage</a></td>
+        </tr>
     <% end %>
   </table>
 </div>

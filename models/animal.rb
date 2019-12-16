@@ -77,9 +77,8 @@ class Animal
     sql = "SELECT * FROM appointments where animal_id = $1;"
     values = [@id]
     results = SqlRunner.run(sql, values)
-    appointment_hash = results[0]
-    appointment = Appointment.new(appointment_hash)
-    return appointment
+    appointments = results.map { |appointment| Appointment.new(appointment) }
+    return appointments
   end
 
   def update()

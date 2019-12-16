@@ -198,5 +198,32 @@ appointment3 = Appointment.new({
 
 appointment3.save()
 
+appointment4 = Appointment.new({
+  "date" => Date.new(2019, 12, 15),
+  "time" => "14:00 - 15:00",
+  "vet_id" => vet2.id,
+  "animal_id" => animal3.id
+  })
+
+appointment4.save()
+
+appointment5 = Appointment.new({
+  "date" => Date.new(2019, 12, 15),
+  "time" => "09:00 - 10:00",
+  "vet_id" => vet1.id,
+  "animal_id" => animal2.id
+  })
+
+appointment5.save()
+
+appointment6 = Appointment.new({
+  "date" => Date.new(2019, 12, 20),
+  "time" => "09:00 - 10:00",
+  "vet_id" => vet3.id,
+  "animal_id" => animal4.id
+  })
+
+appointment6.save()
+
 binding.pry
 nil
