@@ -1,4 +1,5 @@
 <h1>Appointments</h1>
+<p><a href="/appointments/new">Create</a></p>
 <div>
   <table id="appointments-table">
     <tr>
@@ -12,8 +13,8 @@
       <td><%= appointment.time %></td>
       <td><%= appointment.vet_id %></td>
       <td><%= appointment.animal_id %></td>
-      <td><a href="">Details</a></td>
-      <td><a href="">Manage</a></td>
+      <td><a href="/appointments/<%= appointment.id %>">View</a></td>
+      <td><a href="/appointments/<%= appointment.id %>/edit">Manage</a></td>
     </tr>
     <% end %>
   </table>

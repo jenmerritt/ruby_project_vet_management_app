@@ -1,0 +1,24 @@
+
+<div class="details-wrapper">
+  <table class="details-table">
+    <tr>
+      <td>Date</td>
+      <td><%= @appointment.date %></td>
+    </tr>
+    <tr>
+      <td>Time:</td>
+      <td><%= @appointment.time %></td>
+    </tr>
+    <tr>
+      <td>Vet:</td>
+      <td><%= @appointment.vet.name %></td>
+    </tr>
+    <tr>
+      <td>Animal:</td>
+      <td><%= @appointment.animal.name %></td>
+    </tr>
+    <tr>
+      <td><a href = "/appointments/<%= @appointment.id %>/edit">Update Details</a></td>
+    </tr>
+  </table>
+</div>

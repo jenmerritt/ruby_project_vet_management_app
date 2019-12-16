@@ -1,0 +1,23 @@
+
+<table>
+  <tr>
+    <td>Date</td>
+    <td><%= @appointment.date %></td>
+  </tr>
+  <tr>
+    <td>Time:</td>
+    <td><%= @appointment.time %></td>
+  </tr>
+  <tr>
+    <td>Vet:</td>
+    <td><%= @appointment.vet.name %></td>
+  </tr>
+</table>
+<form method="post" actions="/appointments">
+  <select name="animal_id">
+    <% for animal in @animals %>
+    <option value="<%=animal.id%>" <%= 'selected' if @appointment.animal_id == animal.id %>><%= animal.name %></option>
+    <% end %>
+  </select>
+  <input type="submit" value="Update" class="buttons">
+</form>
