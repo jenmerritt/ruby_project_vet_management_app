@@ -32,12 +32,14 @@ end
 
 get '/animals/:id/edit' do
   @animal = Animal.find(params[:id])
-  erb ( :edit)
+  @owners = Owner.all
+  @vets = Vet.all
+  erb (:"animals/edit")
 end
 
 # update
 
-post '/animals/:id' do
+post '/animals/:id/edit' do
   Animal.new(params).update()
-  redirect to '/animals'
+  erb (:"animals/create")
 end

@@ -1,0 +1,39 @@
+<form method="post" actions="/animals">
+  <label for="status">Status</label>
+  <select name="status">
+    <option value="active" <%= 'selected' if @animal.status == "active" %>>Active</option>
+    <option value="inactive" <%= 'selected' if @animal.status == "inactive" %>>Inactive</option>
+  </select>
+  <br>
+  <label for="name">Name</label>
+  <input type="text" name="name" value="<%= @animal.name %>">
+  <br>
+  <label for="dob">Date of Birth</label>
+  <input type="text" name="dob" value="<%= @animal.dob %>">
+  <br>
+  <label for="category">Category</label>
+  <select name="category">
+    <option value="Large">Large</option>
+    <option value="Small">Small</option>
+  </select>
+  <br>
+  <label for="type">Type</label>
+  <input type="text" name="type" value="<%= @animal.type %>">
+  <br>
+  <select name="owner_id">
+    <% for owner in @owners %>
+    <option value="<%=owner.id%>" <%= 'selected' if @animal.owner_id == owner.id %>><%= owner.display_name %></option>
+    <% end %>
+  </select>
+  <br>
+  <select name="vet_id">
+    <% for vet in @vets %>
+    <option value="<%=vet.id%>" <%= 'selected' if @animal.vet_id == vet.id %>><%= vet.name %></option>
+    <% end %>
+  </select>
+  <br>
+  <label for="treatment_notes">Treatment Notes</label>
+  <textarea name="treatment_notes" rows="10" cols="30"><%= @animal.treatment_notes %></textarea>
+  <br>
+  <input type="submit" value="Update" class="buttons">
+</form>
