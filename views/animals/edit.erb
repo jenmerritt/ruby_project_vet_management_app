@@ -22,7 +22,9 @@
   <br>
   <select name="owner_id">
     <% for owner in @owners %>
+    <% if owner.status == "active" %>
     <option value="<%=owner.id%>" <%= 'selected' if @animal.owner_id == owner.id %>><%= owner.display_name %></option>
+    <% end %>
     <% end %>
   </select>
   <br>
