@@ -45,6 +45,20 @@ end
 #   erb (:"appointments/show")
 # end
 
+get '/appointments/vet/:id' do
+  @vet = Vet.find(params[:id])
+  @appointments = Appointment.all
+  erb (:"appointments/vet")
+end
+
+get '/appointments/animal/:id' do
+  @animal = Animal.find(params[:id])
+  @appointments = Appointment.all
+  # @animals = Animal.all
+  # @vets = Vet.all
+  erb (:"appointments/animal")
+end
+
 # edit
 
 get '/appointments/:id/edit' do

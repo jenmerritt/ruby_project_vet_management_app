@@ -1,0 +1,22 @@
+<p><%= @vet.name %> Appointments</p>
+
+<div class="details-wrapper">
+  <table class="details-table">
+    <tr>
+      <td>Date</td>
+      <td>Time</td>
+      <td>Patient ID</td>
+      <td>Patient Name</td>
+    </tr>
+    <% for appointment in @appointments %>
+    <% if appointment.vet_id == @vet.id %>
+    <tr>
+      <td><%= appointment.date %></td>
+      <td><%= appointment.time %></td>
+      <td><%= appointment.animal_id %></td>
+      <td><% appointment.animal.name %></td>
+    </tr>
+    <% end %>
+    <% end %>
+  </table>
+</div>

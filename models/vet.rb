@@ -55,6 +55,15 @@ class Vet
     return animals
   end
 
+  def appointments()
+    sql = "SELECT * FROM appointments where vet_id = $1;"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    appointment_hash = results[0]
+    appointment = Appointment.new(appointment_hash)
+    return appointment
+  end
+
   def update()
     sql = "
     UPDATE vets SET (
