@@ -13,7 +13,7 @@ owner1 = Owner.new({
   "phone_number" => "01234567890",
   "address" => "Downton Abbey, Yorkshire",
   "postcode" => "YO10 7PP",
-  "status" => "registered"
+  "status" => "active"
   })
 
 owner1.save()
@@ -24,7 +24,7 @@ owner2 = Owner.new({
   "phone_number" => "01234567890",
   "address" => "Small Cottage, Yorkshire",
   "postcode" => "YO10 9KL",
-  "status" => "registered"
+  "status" => "active"
   })
 
 owner2.save()
@@ -35,7 +35,7 @@ owner3 = Owner.new({
   "phone_number" => "01234567890",
   "address" => "The Old Garage, Yorkshire",
   "postcode" => "YO20 7HO",
-  "status" => "registered"
+  "status" => "active"
   })
 
 owner3.save()
@@ -46,7 +46,7 @@ owner4 = Owner.new({
   "phone_number" => "01234567890",
   "address" => "New House, Yorkshire",
   "postcode" => "YO12 4FD",
-  "status" => "unregistered"
+  "status" => "inactive"
   })
 
 owner4.save()
@@ -98,7 +98,8 @@ animal1 = Animal.new({
   "type" => "dog",
   "owner_id" => owner1.id,
   "vet_id" => vet2.id,
-  "treatment_notes" => "Previous treatments include blah blah blah"
+  "treatment_notes" => "Previous treatments include blah blah blah",
+  "status" => "active"
   })
 
 animal1.save()
@@ -110,7 +111,8 @@ animal2 = Animal.new({
   "type" => "cat",
   "owner_id" => owner2.id,
   "vet_id" => vet4.id,
-  "treatment_notes" => "Previous treatments include blah blah blah"
+  "treatment_notes" => "Previous treatments include blah blah blah",
+  "status" => "active"
   })
 
 animal2.save()
@@ -122,7 +124,8 @@ animal3 = Animal.new({
   "type" => "horse",
   "owner_id" => owner3.id,
   "vet_id" => vet1.id,
-  "treatment_notes" => "Previous treatments include blah blah blah"
+  "treatment_notes" => "Previous treatments include blah blah blah",
+  "status" => "active"
   })
 
 animal3.save()
@@ -134,7 +137,8 @@ animal4 = Animal.new({
   "type" => "cow",
   "owner_id" => owner4.id,
   "vet_id" => vet3.id,
-  "treatment_notes" => "Previous treatments include blah blah blah"
+  "treatment_notes" => "Previous treatments include blah blah blah",
+  "status" => "active"
   })
 
 animal4.save()
@@ -146,7 +150,8 @@ animal5 = Animal.new({
   "type" => "rabbit",
   "owner_id" => owner1.id,
   "vet_id" => vet5.id,
-  "treatment_notes" => "Previous treatments include blah blah blah"
+  "treatment_notes" => "Previous treatments include blah blah blah",
+  "status" => "active"
   })
 
 animal5.save()
@@ -158,7 +163,8 @@ animal6 = Animal.new({
   "type" => "rabbit",
   "owner_id" => owner1.id,
   "vet_id" => vet2.id,
-  "treatment_notes" => "Previous treatments include blah blah blah"
+  "treatment_notes" => "Previous treatments include blah blah blah",
+  "status" => "active"
   })
 
 animal6.save()

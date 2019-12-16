@@ -6,19 +6,47 @@
       <td>Status</td>
       <td>Animals</td>
       <% for owner in @owners %>
-    <tr>
-      <td><%= owner.display_name %></td>
-      <td><%= owner.status.capitalize %></td>
-      <td>
-        <% animals = owner.animals %>
-        <% for animal in animals %>
-        <%= "#{animal.name} (Patient ID:#{animal.id})" %>
-        <br/>
-        <% end %>
-      </td>
-      <td><a href="/owners/<%= owner.id %>">Details</a></td>
-      <td>Manage</td>
-    </tr>
+      <% if owner.status == "active"%>
+      <tr>
+        <td><%= owner.display_name %></td>
+        <td><%= owner.status.capitalize %></td>
+        <td>
+          <% animals = owner.animals %>
+          <% for animal in animals %>
+          <%= "#{animal.name} (Patient ID:#{animal.id})" %>
+          <br/>
+          <% end %>
+        </td>
+        <td><a href="/owners/<%= owner.id %>">Details</a></td>
+        <td>Manage</td>
+      </tr>
       <% end %>
-  </table>
-</div>
+      <% end %>
+    </table>
+  </div>
+<h1> Inactive Owners</h1>
+  <div>
+    <table id="owners-table">
+      <tr>
+        <td>Name</td>
+        <td>Status</td>
+        <td>Animals</td>
+        <% for owner in @owners %>
+        <% if owner.status == "inactive"%>
+        <tr>
+          <td><%= owner.display_name %></td>
+          <td><%= owner.status.capitalize %></td>
+          <td>
+            <% animals = owner.animals %>
+            <% for animal in animals %>
+            <%= "#{animal.name} (Patient ID:#{animal.id})" %>
+            <br/>
+            <% end %>
+          </td>
+          <td><a href="/owners/<%= owner.id %>">Details</a></td>
+          <td>Manage</td>
+        </tr>
+        <% end %>
+        <% end %>
+      </table>
+    </div>

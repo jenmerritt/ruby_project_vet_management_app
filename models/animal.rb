@@ -3,7 +3,7 @@ require_relative( '../db/sql_runner' )
 class Animal
 
   attr_reader(:id)
-  attr_accessor(:name, :dob, :category, :type, :owner_id, :vet_id, :treatment_notes)
+  attr_accessor(:name, :dob, :category, :type, :owner_id, :vet_id, :treatment_notes, :status)
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -14,6 +14,7 @@ class Animal
     @owner_id = options['owner_id'].to_i
     @vet_id = options['vet_id'].to_i
     @treatment_notes = options['treatment_notes']
+    @status = options['status']
   end
 
   def save()
@@ -25,14 +26,15 @@ class Animal
       type,
       owner_id,
       vet_id,
-      treatment_notes
+      treatment_notes,
+      status
     )
     VALUES
     (
-      $1, $2, $3, $4, $5, $6, $7
+      $1, $2, $3, $4, $5, $6, $7, $8
     )
     RETURNING id;"
-    values = [@name, @dob, @category, @type, @owner_id, @vet_id, @treatment_notes]
+    values = [@name, @dob, @category, @type, @owner_id, @vet_id, @treatment_notes, @status]
     results = SqlRunner.run(sql, values)
     @id = results[0]['id'].to_i
   end
@@ -80,13 +82,14 @@ class Animal
       type,
       owner_id,
       vet_id,
-      treatment_notes
+      treatment_notes,
+      status
     ) =
     (
-      $1, $2, $3, $4, $5, $6, $7
+      $1, $2, $3, $4, $5, $6, $7, $8
     )
-    WHERE id = $8;"
-    values = [@name, @dob, @category, @type, @owner_id, @vet_id, @treatment_notes, @id]
+    WHERE id = $9;"
+    values = [@name, @dob, @category, @type, @owner_id, @vet_id, @treatment_notes, @status, @id]
     SqlRunner.run(sql, values)
   end
 
