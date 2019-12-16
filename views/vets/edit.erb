@@ -1,0 +1,15 @@
+<form method="post" actions="/vets">
+  <label for="name">Name</label>
+  <input type="text" name="name" value="<%= @vet.name %>">
+  <br>
+  <label for="mobile">Mobile</label>
+  <input type="text" name="mobile" value="<%= @vet.mobile %>">
+  <br>
+  <label for="animal_category">Animal Category</label>
+  <select name="animal_category">
+    <option value="small" <%= 'selected' if @vet.animal_category == "small" %>>Small</option>
+    <option value="large" <%= 'selected' if @vet.animal_category == "large" %>>Large</option>
+  </select>
+  <br>
+  <input type="submit" value="Update" class="buttons">
+</form>
