@@ -1,0 +1,20 @@
+<h1>Appointments</h1>
+<div>
+  <table id="appointments-table">
+    <tr>
+      <td>Date</td>
+      <td>Time</td>
+      <td>Vet</td>
+      <td>Patient</td>
+    <% for appointment in @appointments %>
+    <tr>
+      <td><%= appointment.date %></td>
+      <td><%= appointment.time %></td>
+      <td><%= appointment.vet_id %></td>
+      <td><%= appointment.animal_id %></td>
+      <td><a href="">Details</a></td>
+      <td><a href="">Manage</a></td>
+    </tr>
+    <% end %>
+  </table>
+</div>

@@ -1,8 +1,10 @@
+require_relative('../models/appointment.rb')
 require_relative('../models/animal.rb')
 require_relative('../models/vet.rb')
 require_relative('../models/owner.rb')
 require('pry')
 
+Appointment.delete_all()
 Animal.delete_all()
 Vet.delete_all()
 Owner.delete_all()
@@ -168,6 +170,33 @@ animal6 = Animal.new({
   })
 
 animal6.save()
+
+appointment1 = Appointment.new({
+  "date" => Date.new(2019, 12, 16),
+  "time" => "09:00 - 10:00",
+  "vet_id" => vet2.id,
+  "animal_id" => animal1.id
+  })
+
+appointment1.save()
+
+appointment2 = Appointment.new({
+  "date" => Date.new(2019, 12, 16),
+  "time" => "10:00 - 11:00",
+  "vet_id" => vet2.id,
+  "animal_id" => animal2.id
+  })
+
+appointment2.save()
+
+appointment3 = Appointment.new({
+  "date" => Date.new(2019, 12, 16),
+  "time" => "11:00 - 12:00",
+  "vet_id" => vet2.id,
+  "animal_id" => animal5.id
+  })
+
+appointment3.save()
 
 binding.pry
 nil
