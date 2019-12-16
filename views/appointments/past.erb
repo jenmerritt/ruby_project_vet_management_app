@@ -2,8 +2,8 @@
 <p><a href="/appointments/new">Create</a></p>
 <p><a href="/appointments">All</a></p>
 <p><a href="/appointments/today">Today</a></p>
-<p>Past</p>
-<p>Future</p>
+<p><a href="/appointments/past">Past</a></p>
+<p><a href="/appointments/future">Future</a></p>
 <div>
   <table id="appointments-table">
     <tr>
@@ -12,6 +12,7 @@
       <td>Vet</td>
       <td>Patient</td>
     <% for appointment in @appointments %>
+      <% if appointment.date < Date.today() %>
         <tr>
           <td><%= appointment.date %></td>
           <td><%= appointment.time %></td>
@@ -20,6 +21,7 @@
           <td><a href="/appointments/<%= appointment.id %>">View</a></td>
           <td><a href="/appointments/<%= appointment.id %>/edit">Manage</a></td>
         </tr>
+      <% end %>
     <% end %>
   </table>
 </div>

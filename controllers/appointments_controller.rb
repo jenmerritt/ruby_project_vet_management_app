@@ -24,10 +24,25 @@ post '/appointments/new' do
   erb (:"appointments/create")
 end
 
-get '/appointments/:id' do
-  @appointment = Appointment.find(params[:id])
-  erb (:"appointments/show")
+get '/appointments/today' do
+  @appointments = Appointment.all
+  erb (:"appointments/today")
 end
+
+get '/appointments/past' do
+  @appointments = Appointment.all
+  erb (:"appointments/past")
+end
+
+get '/appointments/future' do
+  @appointments = Appointment.all
+  erb (:"appointments/future")
+end
+
+# get '/appointments/:id' do
+#   @appointment = Appointment.find(params[:id])
+#   erb (:"appointments/show")
+# end
 
 # edit
 
