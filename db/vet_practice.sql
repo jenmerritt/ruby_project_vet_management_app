@@ -1,3 +1,4 @@
+DROP TABLE appointments;
 DROP TABLE animals;
 DROP TABLE owners;
 DROP TABLE vets;
@@ -30,4 +31,12 @@ CREATE TABLE animals (
   vet_id INT REFERENCES vets(id),
   treatment_notes TEXT,
   status VARCHAR(255)
+);
+
+CREATE TABLE appointments (
+  id SERIAL primary key,
+  a_date VARCHAR(255),
+  a_time VARCHAR(255),
+  vet_id INT REFERENCES vets(id),
+  animal_id INT REFERENCES animals(id)
 );
