@@ -1,23 +1,33 @@
-
-<table>
-  <tr>
-    <td>Date</td>
-    <td><%= @appointment.date %></td>
-  </tr>
-  <tr>
-    <td>Time:</td>
-    <td><%= @appointment.time %></td>
-  </tr>
-  <tr>
-    <td>Vet:</td>
-    <td><%= @appointment.vet.name %></td>
-  </tr>
-</table>
+<p>Create Appointment</p>
 <form method="post" actions="/appointments">
+  <label for="animal_id">Patient</label>
   <select name="animal_id">
     <% for animal in @animals %>
     <option value="<%=animal.id%>" <%= 'selected' if @appointment.animal_id == animal.id %>><%= animal.name %></option>
     <% end %>
   </select>
-  <input type="submit" value="Update" class="buttons">
+  <br>
+  <label for="vet_id">Vet</label>
+  <select name="vet_id">
+    <% for vet in @vets %>
+    <option value="<%=vet.id%>" <%= 'selected' if @appointment.vet_id == vet.id %>><%= vet.name %></option>
+    <% end %>
+  </select>
+  <br>
+  <label for="date">Date</label>
+  <input type="date" name="date" value="<%= @appointment.date %>">
+  <br>
+  <label for="time">Time</label>
+  <select name="time">
+    <option value="09:00 - 10:00" <%= 'selected' if @appointment.time == "09:00 - 10:00" %>>09:00 - 10:00</option>
+    <option value="10:00 - 11:00" <%= 'selected' if @appointment.time == "10:00 - 11:00" %>>10:00 - 11:00</option>
+    <option value="11:00 - 12:00" <%= 'selected' if @appointment.time == "11:00 - 12:00" %>>11:00 - 12:00</option>
+    <option value="12:00 - 13:00" <%= 'selected' if @appointment.time == "12:00 - 13:00" %>>12:00 - 13:00</option>
+    <option value="13:00 - 14:00" <%= 'selected' if @appointment.time == "13:00 - 14:00" %>>13:00 - 14:00</option>
+    <option value="14:00 - 15:00" <%= 'selected' if @appointment.time == "14:00 - 15:00" %>>14:00 - 15:00</option>
+    <option value="15:00 - 16:00" <%= 'selected' if @appointment.time == "15:00 - 16:00" %>>15:00 - 16:00</option>
+    <option value="16:00 - 17:00" <%= 'selected' if @appointment.time == "16:00 - 17:00" %>>16:00 - 17:00</option>
+  </select>
+  <br>
+  <input type="submit" value="Create" class="buttons">
 </form>

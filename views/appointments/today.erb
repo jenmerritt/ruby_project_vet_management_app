@@ -12,7 +12,9 @@
       <td>Vet</td>
       <td>Patient</td>
     <% for appointment in @appointments %>
-      <% if appointment.date == Date.today() %>
+      <% date_string = appointment.date %>
+      <% date = Date.parse(date_string) %>
+      <% if date == Date.today() %>
         <tr>
           <td><%= appointment.date %></td>
           <td><%= appointment.time %></td>

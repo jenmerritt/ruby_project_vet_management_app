@@ -9,6 +9,7 @@ also_reload('../models/*')
 get '/appointments' do
   @appointments = Appointment.all
   erb(:"appointments/index")
+  # binding.pry
 end
 
 get '/appointments/new' do
