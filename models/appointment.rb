@@ -32,6 +32,15 @@ class Appointment
     @id = results[0]['id'].to_i
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM appointments WHERE id = $1;"
+    values = [id]
+    results = SqlRunner.run(sql, values)
+    appointments_hash = results[0]
+    appointment = Appointment.new(appointments_hash)
+    return appointment
+  end
+
   def self.all()
     sql = "SELECT * FROM appointments;"
     results = SqlRunner.run(sql)
@@ -55,6 +64,24 @@ class Appointment
     SqlRunner.run(sql, values)
   end
 
+  def animal()
+    sql = "SELECT * FROM animals WHERE id = $1;"
+    values = [@animal_id]
+    results = SqlRunner.run(sql, values)
+    animal_hash = results[0]
+    animal = Animal.new(animal_hash)
+    return animal
+  end
+
+  def vet()
+    sql = "SELECT * FROM vets WHERE id = $1;"
+    values = [@vet_id]
+    results = SqlRunner.run(sql, values)
+    vet_hash = results[0]
+    vet = Vet.new(vet_hash)
+    return vet
+  end
+
   def self.delete(id)
     sql = "DELETE FROM appointments where id = $1;"
     values = [id]
@@ -70,14 +97,7 @@ class Appointment
     return appointment_data.map { |appointment| Appointment.new(appointment) }
   end
 
-  def self.find(id)
-    sql = "SELECT * FROM appointments WHERE id = $1;"
-    values = [id]
-    results = SqlRunner.run(sql, values)
-    appointments_hash = results[0]
-    appointment = Appointment.new(appointments_hash)
-    return appointment
-  end
+
 
 
 end
