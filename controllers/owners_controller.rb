@@ -22,3 +22,17 @@ get '/owners/:id' do
   @owner = Owner.find(params[:id])
   erb (:"owners/show")
 end
+
+# edit
+
+get '/owners/:id/edit' do
+  @owner = Owner.find(params[:id])
+  erb (:"owners/edit")
+end
+
+# update
+
+post '/owners/:id/edit' do
+  Owner.new(params).update()
+  erb (:"owners/create")
+end
