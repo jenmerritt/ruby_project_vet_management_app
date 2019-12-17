@@ -1,21 +1,38 @@
+body {
+  font-family: 'Roboto Slab', serif;
+  margin:0px;
+  padding: 0px;
+}
+
+/* Top Bar from layout */
+
+.head {
+  background-color: #ffffff;
+}
+
 #logo-wrapper {
   display: flex;
   justify-content: center;
-  margin:20px;
+  margin-top:10px;
 }
 
 #logo {
-  max-width:150px;
+  max-width:80px;
 }
 
-/* Menu Navigation */
+#name-header{
+  text-align: center;
+  font-family: 'Poiret One', serif;
+  font-size: 20pt;
+  margin-top:0px;
+  margin-bottom:10px;
+}
 
 #menu {
-  width: 350px;
+  width: 500px;
   display: flex;
   justify-content: center;
   margin: 0 auto;
-  padding-bottom: 20px;
 }
 
 .menu-item {
@@ -23,11 +40,35 @@
   flex-grow: 1;
 }
 
-/* Homepage */
-
-#home-header{
-  text-align: center;
+#menu a{
+  text-decoration: none;
+  color: #417a41;
+  font-weight: bold;
 }
+
+#menu a:hover{
+  text-decoration: underline;
+
+}
+
+#menu a:visited{
+  text-decoration: none;
+}
+
+/* Page headings bar */
+
+.page-head {
+  background-color: #417a41;
+  height: 100px;
+}
+
+.page-head h1{
+  text-align: center;
+  line-height:100px;
+  color: #ffffff;
+}
+
+/* Homepage */
 
 .flex-container{
   display: flex;
@@ -39,6 +80,29 @@
   padding:80px;
   margin: 20px;
   border: solid 1px black;
+  background-color: #ffffff;
+  font-size:16pt;
+  min-width:100px;
+  text-align: center;
+}
+
+.home-block a{
+  text-decoration:none;
+}
+
+.home-block a:hover{
+  text-decoration:underline;
+  cursor: pointer;
+}
+
+.home-block a:visited{
+  text-decoration:none;
+}
+
+/* main content area */
+
+.main {
+  background-color: #DFEFE2;
 }
 
 /* Landing Pages with tables */
@@ -84,4 +148,20 @@
 
 .details-table td{
   padding:10px;
+}
+
+/* Appointments */
+
+#appointments-nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* margin: 0 auto; */
+  padding:10px;
+}
+
+.appt-item {
+  display: inline-block;
+  flex-grow: 1;
+  padding-right:20px;
 }

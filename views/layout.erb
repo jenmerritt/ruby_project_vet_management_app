@@ -4,11 +4,15 @@
     <meta charset="utf-8">
     <title>Clover Farm Vets</title>
     <link rel="stylesheet" href="/styles/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
   </head>
   <body>
+    <div class="head">
       <div id="logo-wrapper">
         <img src="/images/CloverFarmBadge.png" id="logo" >
       </div>
+      <h3 id="name-header">Clover Farm Vets</h3>
         <nav id="menu">
           <li class="menu-item"><a href='/'>Dashboard</a></li>
           <li class="menu-item"><a href='/appointments'>Appointments</a></li>
@@ -16,6 +20,7 @@
           <li class="menu-item"><a href='/animals'>Animals</a></li>
           <li class="menu-item"><a href='/vets'>Vets</a></li>
         </nav>
+    </div>
     <%= yield %>
   </body>
 </html>
