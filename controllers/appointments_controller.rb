@@ -9,7 +9,6 @@ also_reload('../models/*')
 get '/appointments' do
   @appointments = Appointment.all
   erb(:"appointments/index")
-  # binding.pry
 end
 
 get '/appointments/new' do
@@ -40,11 +39,6 @@ get '/appointments/future' do
   erb (:"appointments/future")
 end
 
-# get '/appointments/:id' do
-#   @appointment = Appointment.find(params[:id])
-#   erb (:"appointments/show")
-# end
-
 get '/appointments/vet/:id' do
   @vet = Vet.find(params[:id])
   @appointments = @vet.appointments
@@ -57,9 +51,10 @@ get '/appointments/animal/:id' do
   erb (:"appointments/animal")
 end
 
-get '/appointments/date' do
+get '/appointments/date/:date' do
+  @date = params[:date]
   @appointments = Appointment.all
-  erb (:"appointments/date")
+  erb(:"appointments/date")
 end
 
 # edit

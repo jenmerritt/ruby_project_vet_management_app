@@ -41,6 +41,14 @@ class Appointment
     return appointment
   end
 
+  def self.find_by_date(date)
+    sql = "SELECT * FROM appointments WHERE date = $1;"
+    values = [date]
+    results = SqlRunner.run(sql, values)
+    appointments = map_items(results)
+    return appointments
+  end
+
   def self.all()
     sql = "SELECT * FROM appointments;"
     results = SqlRunner.run(sql)

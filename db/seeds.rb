@@ -225,5 +225,14 @@ appointment6 = Appointment.new({
 
 appointment6.save()
 
+appointment7 = Appointment.new({
+  "date" => Date.new(2019, 9, 20),
+  "time" => "09:00 - 10:00",
+  "vet_id" => vet2.id,
+  "animal_id" => animal3.id
+  })
+
+appointment7.save()
+
 binding.pry
 nil

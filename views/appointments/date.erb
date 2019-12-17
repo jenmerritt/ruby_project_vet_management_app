@@ -1,1 +1,12 @@
-select date
+<% for appointment in @appointments %>
+<% date_string = appointment.date %>
+<% if date_string == @date %>
+<%= appointment.date %>
+<br>
+<%= appointment.time %>
+<br>
+<%= appointment.animal.name %>
+<br>
+<%= appointment.vet.name %>
+<% end %>
+<% end %>
