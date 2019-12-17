@@ -3,10 +3,14 @@ require('sinatra/contrib/all')
 require_relative('../models/vet')
 also_reload('../models/*')
 
+# index - list all vets
+
 get '/vets' do
   @vets = Vet.all
   erb(:"vets/index")
 end
+
+# new and create - add vet
 
 get '/vets/new' do
   erb (:"vets/new")
@@ -18,19 +22,19 @@ post '/vets/new' do
   erb (:"vets/create")
 end
 
+# show - list specific vet by id
+
 get '/vets/:id' do
   @vet = Vet.find(params[:id])
   erb (:"vets/show")
 end
 
-# edit
+# edit and update - amend vet
 
 get '/vets/:id/edit' do
   @vet = Vet.find(params[:id])
   erb (:"vets/edit")
 end
-
-# update
 
 post '/vets/:id/edit' do
   Vet.new(params).update()

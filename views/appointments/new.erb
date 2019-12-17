@@ -1,14 +1,14 @@
 <p>Create Appointment</p>
 <form method="post" actions="/appointments">
-  <label for="animal_id">Patient</label>
-  <select name="animal_id">
-    <option value="null">Select Animal</option>
+  <label for="animal_id">Patient*</label>
+  <select name="animal_id" >
+    <option value="0">Select Animal</option>
     <% for animal in @animals %>
     <option value="<%=animal.id%>"><%= animal.name %></option>
     <% end %>
   </select>
   <br>
-  <label for="vet_id">Vet</label>
+  <label for="vet_id">Vet*</label>
   <select name="vet_id">
     <option value="null">Select Vet</option>
     <% for vet in @vets %>
@@ -16,9 +16,9 @@
     <% end %>
   </select>
   <br>
-  <label for="date">Date</label>
-  <input type="date" name="date">
-  <label for="time">Time</label>
+  <label for="date">Date*</label>
+  <input type="date" name="date" required>
+  <label for="time">Time*</label>
   <select name="time">
     <option value="null">Select Time</option>
     <option value="09:00 - 10:00">09:00 - 10:00</option>

@@ -140,7 +140,7 @@ animal4 = Animal.new({
   "owner_id" => owner4.id,
   "vet_id" => vet3.id,
   "treatment_notes" => "Previous treatments include blah blah blah",
-  "status" => "active"
+  "status" => "inactive"
   })
 
 animal4.save()

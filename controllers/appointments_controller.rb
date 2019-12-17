@@ -6,10 +6,14 @@ require_relative('../models/animal')
 require_relative('../models/vet')
 also_reload('../models/*')
 
+# index - list all appointments
+
 get '/appointments' do
   @appointments = Appointment.all
   erb(:"appointments/index")
 end
+
+# new and create - new appointment
 
 get '/appointments/new' do
   @appointments = Appointment.all
@@ -24,20 +28,28 @@ post '/appointments/new' do
   erb (:"appointments/create")
 end
 
+# list all appointments for today
+
 get '/appointments/today' do
   @appointments = Appointment.all
   erb (:"appointments/today")
 end
+
+# list all appointments in the past
 
 get '/appointments/past' do
   @appointments = Appointment.all
   erb (:"appointments/past")
 end
 
+# list all appointments in the future
+
 get '/appointments/future' do
   @appointments = Appointment.all
   erb (:"appointments/future")
 end
+
+# list all appointments by vet
 
 get '/appointments/vet/:id' do
   @vet = Vet.find(params[:id])
@@ -45,11 +57,15 @@ get '/appointments/vet/:id' do
   erb (:"appointments/vet")
 end
 
+# list all appointments by animal
+
 get '/appointments/animal/:id' do
   @animal = Animal.find(params[:id])
   @appointments = @animal.appointments
   erb (:"appointments/animal")
 end
+
+# list all appointments on a specific date
 
 get '/appointments/date/:date' do
   @date = params[:date]
@@ -57,7 +73,7 @@ get '/appointments/date/:date' do
   erb(:"appointments/date")
 end
 
-# edit
+# edit and update - amend an appointment
 
 get '/appointments/:id/edit' do
   @appointment = Appointment.find(params[:id])
@@ -65,8 +81,6 @@ get '/appointments/:id/edit' do
   @vets = Vet.all
   erb (:"appointments/edit")
 end
-
-# update
 
 post '/appointments/:id/edit' do
   Appointment.new(params).update()

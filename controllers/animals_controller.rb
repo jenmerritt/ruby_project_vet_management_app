@@ -6,10 +6,14 @@ require_relative('../models/owner')
 require_relative('../models/vet')
 also_reload('../models/*')
 
+# index - animals listing page
+
 get '/animals' do
   @animals = Animal.all
   erb(:"animals/index")
 end
+
+# new - animals register page
 
 get '/animals/register' do
   @owners = Owner.all
@@ -23,12 +27,14 @@ post '/animals/register' do
   erb (:"animals/create")
 end
 
+# show - animals detail page
+
 get '/animals/:id' do
   @animal = Animal.find(params[:id])
   erb (:"animals/show")
 end
 
-# edit
+# edit and update - edit animal
 
 get '/animals/:id/edit' do
   @animal = Animal.find(params[:id])
@@ -36,8 +42,6 @@ get '/animals/:id/edit' do
   @vets = Vet.all
   erb (:"animals/edit")
 end
-
-# update
 
 post '/animals/:id/edit' do
   Animal.new(params).update()
