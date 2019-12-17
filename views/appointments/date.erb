@@ -1,6 +1,6 @@
 <% for appointment in @appointments %>
-<% date_string = appointment.date %>
-<% if date_string == @date %>
+<% appointment_date = appointment.date %>
+<% if appointment_date == @date %>
 <%= appointment.date %>
 <br>
 <%= appointment.time %>
@@ -8,5 +8,6 @@
 <%= appointment.animal.name %>
 <br>
 <%= appointment.vet.name %>
+<br>
 <% end %>
 <% end %>

@@ -1,4 +1,26 @@
 <p><%=@vet.name%> appointments</p>
+<p>Today</p>
+<div>
+  <table id="appointments-table">
+    <tr>
+      <td>Date</td>
+      <td>Time</td>
+      <td>Patient</td>
+    <% for appointment in @appointments %>
+    <% date_string = appointment.date %>
+    <% date = Date.parse(date_string) %>
+      <% if date > Date.today %>
+        <tr>
+          <td><%= appointment.date %></td>
+          <td><%= appointment.time %></td>
+          <td><a href="/appointments/animal/ <%= appointment.animal_id %>"><%= appointment.animal.name %></td>
+          <td><a href="/appointments/<%= appointment.id %>/edit">Manage</a></td>
+        </tr>
+        <% end %>
+    <% end %>
+  </table>
+</div>
+<p>Upcoming</p>
 <div>
   <table id="appointments-table">
     <tr>
@@ -12,6 +34,27 @@
           <td><a href="/appointments/animal/ <%= appointment.animal_id %>"><%= appointment.animal.name %></td>
           <td><a href="/appointments/<%= appointment.id %>/edit">Manage</a></td>
         </tr>
+    <% end %>
+  </table>
+</div>
+<p>Past</p>
+<div>
+  <table id="appointments-table">
+    <tr>
+      <td>Date</td>
+      <td>Time</td>
+      <td>Patient</td>
+    <% for appointment in @appointments %>
+    <% date_string = appointment.date %>
+    <% date = Date.parse(date_string) %>
+      <% if date < Date.today %>
+        <tr>
+          <td><%= appointment.date %></td>
+          <td><%= appointment.time %></td>
+          <td><a href="/appointments/animal/ <%= appointment.animal_id %>"><%= appointment.animal.name %></td>
+          <td><a href="/appointments/<%= appointment.id %>/edit">Manage</a></td>
+        </tr>
+        <% end %>
     <% end %>
   </table>
 </div>
