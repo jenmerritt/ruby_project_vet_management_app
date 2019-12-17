@@ -1,15 +1,15 @@
 <div class= "page-head">
 <h1>Animals</h1>
 </div>
-<div>
+<div class="table-wrapper">
   <table id="animals-table">
     <tr>
-      <td>Patient ID</td>
-      <td>Name</td>
-      <td>Category</td>
-      <td>Type</td>
-      <td>Owner</td>
-      <td>Vet</td>
+      <th>Patient ID</th>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Type</th>
+      <th>Owner</th>
+      <th>Vet</th>
     </tr>
     <% for animal in @animals %>
     <% if animal.status == "active"%>
@@ -20,23 +20,25 @@
       <td><%= animal.type %></td>
       <td><%= animal.owner.display_name %></td>
       <td><%= animal.vet.name %></td>
-      <td><a href="/animals/<%= animal.id %>">Info</a></td>
-      <td><a href="/animals/<%= animal.id %>/edit">Manage</a></td>
+      <td class="table-button"><a href="/animals/<%= animal.id %>">Info</a></td>
+      <td class="table-button"><a href="/animals/<%= animal.id %>/edit">Manage</a></td>
     </tr>
     <% end %>
     <% end %>
   </table>
 </div>
+<div class= "page-head">
 <h1>Inactive Animals</h1>
-<div>
+</div>
+<div class="table-wrapper">
   <table id="animals-table">
     <tr>
-      <td>Patient ID</td>
-      <td>Name</td>
-      <td>Category</td>
-      <td>Type</td>
-      <td>Owner</td>
-      <td>Vet</td>
+      <th>Patient ID</th>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Type</th>
+      <th>Owner</th>
+      <th>Vet</th>
     </tr>
     <% for animal in @animals %>
     <% if animal.status == "inactive"%>
@@ -47,8 +49,8 @@
       <td><%= animal.type %></td>
       <td><%= animal.owner.display_name %></td>
       <td><%= animal.vet.name %></td>
-      <td><a href="/animals/<%= animal.id %>">Info</a></td>
-      <td><a href="/animals/<%= animal.id %>/edit">Manage</a></td>
+      <td class="table-button"><a href="/animals/<%= animal.id %>">Info</a></td>
+      <td class="table-button"><a href="/animals/<%= animal.id %>/edit">Manage</a></td>
     </tr>
     <% end %>
     <% end %>

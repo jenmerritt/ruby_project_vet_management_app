@@ -1,20 +1,25 @@
 <div class= "page-head">
 <h1>Vets</h1>
 </div>
-<p><a href="/vets/new">Add Vet</a></p>
-<div>
+<div class="actions-nav">
+  <p>Actions:</p>
+  <ul>
+    <li class="appt-item"><a href="/vets/new">Add Vet</a></li>
+  </ul>
+</div>
+<div class="table-wrapper">
   <table id="vets-table">
     <tr>
-      <td>Name</td>
-      <td>Mobile</td>
-      <td>Animal Category</td>
+      <th>Name</th>
+      <th>Mobile</th>
+      <th>Animal Category</th>
     <% for vet in @vets %>
     <tr>
       <td><%= vet.name.capitalize %></td>
       <td><%= vet.mobile %></td>
       <td><%= vet.animal_category %></td>
-      <td><a href="/vets/<%= vet.id %>">Details</a></td>
-      <td><a href="/vets/<%= vet.id %>/edit">Manage</a></td>
+      <td class="table-button"><a href="/vets/<%= vet.id %>">Details</a></td>
+      <td class="table-button"><a href="/vets/<%= vet.id %>/edit">Manage</a></td>
     </tr>
     <% end %>
   </table>

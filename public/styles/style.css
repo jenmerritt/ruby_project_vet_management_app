@@ -3,6 +3,14 @@ body {
   margin:0px;
 }
 
+p {
+  font-size:12pt;
+}
+
+h1{
+  font-size: 20pt;
+}
+
 /* Top Bar from layout */
 
 .head {
@@ -114,31 +122,54 @@ body {
 
 /* Landing Pages with tables */
 
-#animals-table {
-  width: 100%;
+table {
+  width:100%;
+  border-collapse: collapse;
 }
 
-#animals-table td{
+table a{
+  text-decoration: none;
+  color: #417a41;
+  font-weight: bold;
+}
+
+table a:hover{
+  text-decoration: underline;
+}
+
+/* table tr:nth-child(even){
+  background-color:#DFEFE2;
+} */
+
+tr:hover{
+  background-color:#DFEFE2;
+}
+
+th{
+  background-color:#ffffff;
   padding: 20px;
+  vertical-align: top;
+  text-align:left;
+  font-size:16pt;
 }
 
-#owners-table {
-  width: 100%;
+th:hover{
+  background-color:#ffffff;
 }
 
-#owners-table td{
+td {
   padding: 20px;
   vertical-align: top;
 }
 
-#vets-table {
-  width: 100%;
+.table-wrapper{
+  margin: 15px 50px 50px 50px;
 }
 
-#vets-table td{
-  padding: 20px;
-  vertical-align: top;
+.table-button {
+  background-color:#ffffff;
 }
+
 
 /* Show pages */
 
@@ -159,12 +190,30 @@ body {
 
 /* Appointments */
 
-#appointments-nav {
+.actions-nav {
   width: 100%;
   display: flex;
   justify-content: center;
   /* margin: 0 auto; */
   padding:10px;
+}
+
+.actions-nav a{
+  color: #417a41;
+  font-size:12pt;
+  text-decoration: none;
+}
+
+.actions-nav a:hover{
+  color: #417a41;
+  font-size:12pt;
+  text-decoration: underline;
+}
+
+.actions-nav a:visited{
+  color: #417a41;
+  font-size:12pt;
+  text-decoration: none;
 }
 
 .appt-item {

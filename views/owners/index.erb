@@ -1,12 +1,13 @@
 <div class= "page-head">
 <h1>Owners</h1>
 </div>
-<div>
+<div class="table-wrapper">
   <table id="owners-table">
     <tr>
-      <td>Name</td>
-      <td>Status</td>
-      <td>Animals</td>
+      <th>Name</th>
+      <th>Status</th>
+      <th>Animals</th
+    </tr>
       <% for owner in @owners %>
       <% if owner.status == "active"%>
       <tr>
@@ -19,20 +20,23 @@
           <br/>
           <% end %>
         </td>
-        <td><a href="/owners/<%= owner.id %>">Details</a></td>
-        <td><a href="/owners/<%= owner.id %>/edit">Manage</a></td>
+        <td class="table-button"><a href="/owners/<%= owner.id %>">Details</a></td>
+        <td class="table-button"><a href="/owners/<%= owner.id %>/edit">Manage</a></td>
       </tr>
       <% end %>
       <% end %>
     </table>
   </div>
-<h1> Inactive Owners</h1>
-  <div>
+  <div class= "page-head">
+  <h1>Inactive Owners</h1>
+  </div>
+  <div class="table-wrapper">
     <table id="owners-table">
       <tr>
-        <td>Name</td>
-        <td>Status</td>
-        <td>Animals</td>
+        <th>Name</th>
+        <th>Status</th>
+        <th>Animals</th>
+      </tr>
         <% for owner in @owners %>
         <% if owner.status == "inactive"%>
         <tr>
@@ -45,10 +49,10 @@
             <br/>
             <% end %>
           </td>
-          <td><a href="/owners/<%= owner.id %>">Details</a></td>
-          <td><a href="/owners/<%= owner.id %>/edit">Manage</a></td>
+          <td class="table-button"><a href="/owners/<%= owner.id %>">Details</a></td>
+          <td class="table-button"><a href="/owners/<%= owner.id %>/edit">Manage</a></td>
         </tr>
         <% end %>
         <% end %>
       </table>
-    </div>
+  </div>
