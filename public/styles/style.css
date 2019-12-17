@@ -1,7 +1,6 @@
 body {
   font-family: 'Roboto Slab', serif;
   margin:0px;
-  padding: 0px;
 }
 
 /* Top Bar from layout */
@@ -77,22 +76,29 @@ body {
 }
 
 .home-block{
-  padding:80px;
+  /* padding:80px; */
   margin: 20px;
-  border: solid 1px black;
-  background-color: #ffffff;
-  font-size:16pt;
-  min-width:100px;
+  border: solid 5px #417a41;
+  background-image: url("/images/cloverfarmbg.png");
+  background-position: bottom;
+  background-size: cover;
+  width:200px;
+  height:200px;
+  line-height: 150px;
   text-align: center;
 }
 
 .home-block a{
   text-decoration:none;
+  font-size:20pt;
+  color:#417a41;
 }
 
 .home-block a:hover{
   text-decoration:underline;
   cursor: pointer;
+  font-size:22pt;
+  color:#417a41;
 }
 
 .home-block a:visited{
@@ -103,6 +109,7 @@ body {
 
 .main {
   background-color: #DFEFE2;
+  padding: 0 20px 50px 20px;
 }
 
 /* Landing Pages with tables */
@@ -164,4 +171,15 @@ body {
   display: inline-block;
   flex-grow: 1;
   padding-right:20px;
+}
+
+/* footer */
+
+#footer {
+}
+
+#footer p{
+  text-align: center;
+  font-family: 'Poiret One', serif;
+  font-size:16pt;
 }
