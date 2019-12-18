@@ -1,44 +1,46 @@
-
+<div class= "page-head">
+<h1>Details</h1>
+</div>
 <div class="details-wrapper">
   <table class="details-table">
     <tr>
-      <td>First Name:</td>
-      <td><%= @owner.first_name.capitalize %></td>
+      <td class="table-button">First Name:</td>
+      <td class="table-button"><%= @owner.first_name.capitalize %></td>
     </tr>
     <tr>
-      <td>Last Name:</td>
-      <td><%= @owner.last_name.capitalize %></td>
+      <td class="table-button">Last Name:</td>
+      <td class="table-button"><%= @owner.last_name.capitalize %></td>
     </tr>
     <tr>
-      <td>Status:</td>
-      <td><%= @owner.status %></td>
+      <td class="table-button">Status:</td>
+      <td class="table-button"><%= @owner.status.capitalize %></td>
     </tr>
     <tr>
-      <td>Phone Number:</td>
-      <td><%= @owner.phone_number %></td>
+      <td class="table-button">Phone Number:</td>
+      <td class="table-button"><%= @owner.phone_number %></td>
     </tr>
     <tr>
-      <td>Address:</td>
-      <td><%= @owner.address %></td>
+      <td class="table-button">Address:</td>
+      <td class="table-button"><%= @owner.address %></td>
     </tr>
     <tr>
-      <td>Postcode:</td>
-      <td><%= @owner.postcode %></td>
+      <td class="table-button">Postcode:</td>
+      <td class="table-button"><%= @owner.postcode %></td>
     </tr>
     <tr>
-      <td>Notes:</td>
-      <td><%= @owner.notes %></td>
+      <td class="table-button">Notes:</td>
+      <td class="table-button"><%= @owner.notes %></td>
     </tr>
-    <tr>
-      <td>Animals:</td>
-      <td><% animals = @owner.animals %>
+    <tr class="table-button">
+      <td class="table-button">Animals:</td>
+      <td class="table-button"><% animals = @owner.animals %>
       <% for animal in animals %>
       <%= "#{animal.name} (Patient ID:#{animal.id})" %>
       <br/>
       <% end %></td>
     </tr>
     <tr>
-      <td><a href = "/owners/<%= @owner.id %>/edit">Update Details</a></td>
+      <td class="table-button"><a href = "/owners/<%= @owner.id %>/edit">Edit Details</a></td>
     </tr>
   </table>
 </div>

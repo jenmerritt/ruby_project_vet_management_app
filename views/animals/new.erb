@@ -1,3 +1,7 @@
+<div class= "page-head">
+  <h1>Register Animal</h1>
+</div>
+<div class="details-wrapper">
 <form method="post" actions="/animals">
   <label for="status">Status</label>
   <select name="status">
@@ -21,6 +25,7 @@
   <label for="type">Type</label>
   <input type="text" name="type">
   <br>
+  <label for="owner_id">Owner</label>
   <select name="owner_id">
     <option value="null">Select Owner</option>
     <% for owner in @owners %>
@@ -30,6 +35,7 @@
     <% end %>
   </select>
   <br>
+  <label for="vet_id">Vet</label>
   <select name="vet_id">
     <option value="null">Select Vet</option>
     <% for vet in @vets %>
@@ -42,3 +48,4 @@
   <br>
   <input type="submit" value="Register" class="buttons">
 </form>
+</div>

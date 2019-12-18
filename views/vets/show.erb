@@ -1,21 +1,23 @@
-
+<div class= "page-head">
+<h1>Details</h1>
+</div>
 <div class="details-wrapper">
   <table class="details-table">
     <tr>
-      <td>Name:</td>
-      <td><%= @vet.name.capitalize %></td>
+      <td class="table-button">Name:</td>
+      <td class="table-button"><%= @vet.name.capitalize %></td>
     </tr>
     <tr>
-      <td>Mobile:</td>
-      <td><%= @vet.mobile %></td>
+      <td class="table-button">Mobile:</td>
+      <td class="table-button"><%= @vet.mobile %></td>
     </tr>
     <tr>
-      <td>Animal Category:</td>
-      <td><%= @vet.animal_category %></td>
+      <td class="table-button">Animal Category:</td>
+      <td class="table-button"><%= @vet.animal_category %></td>
     </tr>
     <tr>
-      <td>Animals:</td>
-      <td>
+      <td class="table-button">Animals:</td>
+      <td class="table-button">
         <% animals = @vet.animals %>
         <% for animal in animals %>
         <%= "#{animal.name} (Patient ID:#{animal.id})" %>
@@ -23,7 +25,7 @@
       <% end %></td>
     </tr>
     <tr>
-      <td><a href = "/vets/<%= @vet.id %>/edit">Update Details</a></td>
+      <td class="table-button"><a href = "/vets/<%= @vet.id %>/edit">Update Details</a></td>
     </tr>
   </table>
 </div>

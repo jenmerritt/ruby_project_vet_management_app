@@ -1,6 +1,7 @@
 <div class= "page-head">
   <h1>Update Animal Record</h1>
 </div>
+<div class="details-wrapper">
 <form method="post" actions="/animals">
   <label for="status">Status</label>
   <select name="status">
@@ -23,6 +24,7 @@
   <label for="type">Type</label>
   <input type="text" name="type" value="<%= @animal.type %>">
   <br>
+  <label for="owner_id">Owner</label>
   <select name="owner_id">
     <% for owner in @owners %>
     <% if owner.status == "active" %>
@@ -31,6 +33,7 @@
     <% end %>
   </select>
   <br>
+  <label for="vet_id">Vet</label>
   <select name="vet_id">
     <% for vet in @vets %>
     <option value="<%=vet.id%>" <%= 'selected' if @animal.vet_id == vet.id %>><%= vet.name %></option>
@@ -42,3 +45,4 @@
   <br>
   <input type="submit" value="Update" class="buttons">
 </form>
+</div>

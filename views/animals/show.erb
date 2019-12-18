@@ -4,39 +4,39 @@
 <div class="details-wrapper">
   <table class="details-table">
     <tr>
-      <td>Patient ID:</td>
-      <td><%= @animal.id %></td>
+      <td class="table-button">Patient ID:</td>
+      <td class="table-button"><%= @animal.id %></td>
     </tr>
     <tr>
-      <td>Name:</td>
-      <td><%= @animal.name.capitalize %></td>
+      <td class="table-button">Name:</td>
+      <td class="table-button"><%= @animal.name.capitalize %></td>
     </tr>
     <tr>
-      <td>DOB:</td>
-      <td><%= @animal.dob %></td>
+      <td class="table-button">DOB:</td>
+      <td class="table-button"><%= @animal.dob %></td>
     </tr>
     <tr>
-      <td>Category:</td>
-      <td><%= @animal.category %></td>
+      <td class="table-button">Category:</td>
+      <td class="table-button"><%= @animal.category %></td>
     </tr>
     <tr>
-      <td>Type:</td>
-      <td><%= @animal.type %></td>
+      <td class="table-button">Type:</td>
+      <td class="table-button"><%= @animal.type %></td>
     </tr>
     <tr>
-      <td>Owner:</td>
-      <td><%= "#{@animal.owner.display_name} (#{@animal.owner.status})" %></td>
+      <td class="table-button">Owner:</td>
+      <td class="table-button"><%= "#{@animal.owner.display_name} (#{@animal.owner.status})" %></td>
     </tr>
     <tr>
-      <td>Vet:</td>
-      <td><%= @animal.vet.name %></td>
+      <td class="table-button">Vet:</td>
+      <td class="table-button"><%= @animal.vet.name %></td>
     </tr>
     <tr>
-      <td>Treatment Notes:</td>
-      <td><%= @animal.treatment_notes %></td>
+      <td class="table-button">Treatment Notes:</td>
+      <td class="table-button"><%= @animal.treatment_notes %></td>
     </tr>
     <tr>
-      <td><a href = "/animals/<%= @animal.id %>/edit">Update Details</a></td>
+      <td class="table-button"><a href = "/animals/<%= @animal.id %>/edit">Update Details</a></td>
     </tr>
   </table>
 </div>
