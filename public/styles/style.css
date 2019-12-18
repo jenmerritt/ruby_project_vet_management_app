@@ -220,11 +220,24 @@ input {
   width:200px;
   display: inline-block;
   float: left;
+  font-family: 'Roboto Slab', serif;
+  font-size:12pt;
+}
+
+textarea {
+  font-family: 'Roboto Slab', serif;
+  font-size:12pt;
+  display: inline-block;
+  float: left;
+  width:450px;
+  margin-top:10px;
 }
 
 select {
   width:200px;
   height:30px;
+  font-family: 'Roboto Slab', serif;
+  font-size:12pt;
 }
 
 label{
