@@ -75,6 +75,22 @@ h1{
   color: #ffffff;
 }
 
+.sub-page-head {
+  background-color: #417a41;
+  height: 50px;
+}
+
+.sub-page-head h2{
+  text-align: center;
+  line-height:50px;
+  color: #ffffff;
+  font-size:16pt;
+}
+
+.center-sub-head h2{
+  text-align: center
+}
+
 /* Homepage */
 
 .flex-container{
@@ -168,6 +184,10 @@ td {
 
 .table-button {
   background-color:#ffffff;
+}
+
+.td-border-left{
+  border-left: 1px solid black;
 }
 
 

@@ -1,12 +1,15 @@
 <div class= "page-head">
 <h1>Appointments for <%=@vet.name%></h1>
-</div><p>Today</p>
+</div>
+<div class="center-sub-head">
+<h2>Today</h2>
+</div>
 <div>
   <table id="appointments-table">
     <tr>
-      <td>Date</td>
-      <td>Time</td>
-      <td>Patient</td>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Patient</th>
     <% for appointment in @appointments %>
     <% date_string = appointment.date %>
     <% date = Date.parse(date_string) %>
@@ -15,36 +18,40 @@
           <td><%= appointment.date %></td>
           <td><%= appointment.time %></td>
           <td><a href="/appointments/animal/ <%= appointment.animal_id %>"><%= appointment.animal.name %></td>
-          <td><a href="/appointments/<%= appointment.id %>/edit">Manage</a></td>
+          <td class="table-button td-border-left"><a href="/appointments/<%= appointment.id %>/edit">Manage</a></td>
         </tr>
         <% end %>
     <% end %>
   </table>
 </div>
-<p>Upcoming</p>
+<div class="sub-page-head">
+<h2>Upcoming</h2>
+</div>
 <div>
   <table id="appointments-table">
     <tr>
-      <td>Date</td>
-      <td>Time</td>
-      <td>Patient</td>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Patient</th>
     <% for appointment in @appointments %>
         <tr>
           <td><%= appointment.date %></td>
           <td><%= appointment.time %></td>
           <td><a href="/appointments/animal/ <%= appointment.animal_id %>"><%= appointment.animal.name %></td>
-          <td><a href="/appointments/<%= appointment.id %>/edit">Manage</a></td>
+          <td class="table-button td-border-left"><a href="/appointments/<%= appointment.id %>/edit">Manage</a></td>
         </tr>
     <% end %>
   </table>
 </div>
-<p>Past</p>
+<div class="sub-page-head">
+<h2>Past</h2>
+</div>
 <div>
   <table id="appointments-table">
     <tr>
-      <td>Date</td>
-      <td>Time</td>
-      <td>Patient</td>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Patient</th>
     <% for appointment in @appointments %>
     <% date_string = appointment.date %>
     <% date = Date.parse(date_string) %>
@@ -53,7 +60,7 @@
           <td><%= appointment.date %></td>
           <td><%= appointment.time %></td>
           <td><a href="/appointments/animal/ <%= appointment.animal_id %>"><%= appointment.animal.name %></td>
-          <td><a href="/appointments/<%= appointment.id %>/edit">Manage</a></td>
+          <td class="table-button td-border-left"><a href="/appointments/<%= appointment.id %>/edit">Manage</a></td>
         </tr>
         <% end %>
     <% end %>

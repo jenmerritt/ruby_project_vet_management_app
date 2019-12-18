@@ -1,6 +1,6 @@
 <% require('pry') %>
 <div class= "page-head">
-<h1>Appointments</h1>
+<h1>All Appointments</h1>
 </div>
 <div class="actions-nav">
   <p>Appointment Actions:</p>
@@ -26,7 +26,7 @@
           <td><%= appointment.time %></td>
           <td><a href="/appointments/vet/ <%= appointment.vet_id %>"><%= appointment.vet.name %></a></td>
           <td><a href="/appointments/animal/ <%= appointment.animal_id %>"><%= appointment.animal.name %></td>
-          <td  class="table-button"><a href="/appointments/<%= appointment.id %>/edit">Manage</a></td>
+          <td  class="table-button td-border-left"><a href="/appointments/<%= appointment.id %>/edit">Manage</a></td>
         </tr>
     <% end %>
   </table>
