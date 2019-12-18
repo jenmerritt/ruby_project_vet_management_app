@@ -1,16 +1,36 @@
 <div class= "page-head">
   <h1>Appointments on <%= @date %> </h1>
 </div>
-<% for appointment in @appointments %>
-<% appointment_date = appointment.date %>
-<% if appointment_date == @date %>
-<%= appointment.date %>
-<br>
-<%= appointment.time %>
-<br>
-<%= appointment.animal.name %>
-<br>
-<%= appointment.vet.name %>
-<br>
-<% end %>
-<% end %>
+<div class="actions-nav">
+  <p>Appointment Actions:</p>
+  <ul>
+    <li class="appt-item"><a href="/appointments/new">Create New</a></li>
+    <li class="appt-item"><a href="/appointments">View All</a></li>
+    <li class="appt-item"><a href="/appointments/today">View Today</a></li>
+    <li class="appt-item"><a href="/appointments/past">View Past</a></li>
+    <li class="appt-item"><a href="/appointments/future">View Upcoming</a></li>
+  </ul>
+</div>
+<div class="table-wrapper">
+  <table id="appointments-table">
+    <tr>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Vet</th>
+      <th>Patient</th>
+      </tr>
+      <% for appointment in @appointments %>
+      <% appointment_date = appointment.date %>
+      <% if appointment_date == @date %>
+      <tr>
+      <td><%= appointment.date %></td>
+      <td><%= appointment.time %></td>
+      <td><%= appointment.animal.name %></td>
+      <td><%= appointment.vet.name %></td>
+      <td class="table-button td-border-left"><a href="/appointments/<%= appointment.id %>/edit">Manage</a></td>
+      
+      </tr>
+      <% end %>
+      <% end %>
+    </table>
+</div>

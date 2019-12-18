@@ -1,6 +1,7 @@
 <div class= "page-head">
   <h1>Edit Appointment</h1>
 </div>
+<div class="details-wrapper">
 <form method="post" actions="/appointments">
   <label for="animal_id">Patient</label>
   <select name="animal_id">
@@ -31,5 +32,6 @@
     <option value="16:00 - 17:00" <%= 'selected' if @appointment.time == "16:00 - 17:00" %>>16:00 - 17:00</option>
   </select>
   <br>
-  <input type="submit" value="Save" class="buttons">
+  <input type="submit" value="Update" class="buttons">
 </form>
+</div>

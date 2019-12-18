@@ -18,6 +18,7 @@
       <th>Time</th>
       <th>Vet</th>
       <th>Patient</th>
+      </tr>
     <% for appointment in @appointments %>
       <% date_string = appointment.date %>
       <% date = Date.parse(date_string) %>
