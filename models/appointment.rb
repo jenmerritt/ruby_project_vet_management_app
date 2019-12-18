@@ -105,7 +105,13 @@ class Appointment
     return appointment_data.map { |appointment| Appointment.new(appointment) }
   end
 
-
-
+  def display_date(date)
+    actual_date = Date.parse(date)
+    year = actual_date.year.to_s
+    month = actual_date.month.to_s
+    day = actual_date.day.to_s
+    formatted_date = "#{day}/#{month}/#{year}"
+    return formatted_date
+  end
 
 end
