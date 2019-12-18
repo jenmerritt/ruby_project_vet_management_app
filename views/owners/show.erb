@@ -1,5 +1,5 @@
 <div class= "page-head">
-<h1>Details</h1>
+<h1>Owner Details</h1>
 </div>
 <div class="details-wrapper">
   <table class="details-table">
@@ -35,7 +35,7 @@
       <td class="table-button">Animals:</td>
       <td class="table-button"><% animals = @owner.animals %>
       <% for animal in animals %>
-      <%= "#{animal.name} (Patient ID:#{animal.id})" %>
+      <a href="/animals/<%= animal.id %>"><%= "#{animal.name} (Patient ID:#{animal.id})" %></a>
       <br/>
       <% end %></td>
     </tr>

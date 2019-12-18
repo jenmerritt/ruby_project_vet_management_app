@@ -1,6 +1,12 @@
 <div class= "page-head">
 <h1>Animals</h1>
 </div>
+<div class="actions-nav">
+  <p>Actions:</p>
+  <ul>
+    <li class="appt-item"><a href="/animals/register">Add Animal</a></li>
+  </ul>
+</div>
 <div class="table-wrapper">
   <table id="animals-table">
     <tr>
@@ -20,7 +26,7 @@
       <td><%= animal.type.capitalize %></td>
       <td><%= animal.owner.display_name %></td>
       <td><%= animal.vet.name %></td>
-      <td class="table-button"><a href="/animals/<%= animal.id %>">Details</a></td>
+      <td class="table-button td-border-left"><a href="/animals/<%= animal.id %>">Details</a></td>
       <td class="table-button"><a href="/animals/<%= animal.id %>/edit">Manage</a></td>
     </tr>
     <% end %>
@@ -49,7 +55,7 @@
       <td><%= animal.type.capitalize %></td>
       <td><%= animal.owner.display_name %></td>
       <td><%= animal.vet.name %></td>
-      <td class="table-button"><a href="/animals/<%= animal.id %>">Details</a></td>
+      <td class="table-button td-border-left"><a href="/animals/<%= animal.id %>">Details</a></td>
       <td class="table-button"><a href="/animals/<%= animal.id %>/edit">Manage</a></td>
     </tr>
     <% end %>

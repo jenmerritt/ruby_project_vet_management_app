@@ -1,6 +1,12 @@
 <div class= "page-head">
 <h1>Owners</h1>
 </div>
+<div class="actions-nav">
+  <p>Actions:</p>
+  <ul>
+    <li class="appt-item"><a href="/owners/register">Add Owner</a></li>
+  </ul>
+</div>
 <div class="table-wrapper">
   <table id="owners-table">
     <tr>
@@ -49,7 +55,7 @@
             <br/>
             <% end %>
           </td>
-          <td class="table-button"><a href="/owners/<%= owner.id %>">Details</a></td>
+          <td class="table-button td-border-left"><a href="/owners/<%= owner.id %>">Details</a></td>
           <td class="table-button"><a href="/owners/<%= owner.id %>/edit">Manage</a></td>
         </tr>
         <% end %>
