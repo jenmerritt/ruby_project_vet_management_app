@@ -17,8 +17,9 @@
     <tr>
       <td><%= vet.name.capitalize %></td>
       <td><%= vet.mobile %></td>
-      <td><%= vet.animal_category %></td>
+      <td><%= vet.animal_category.capitalize %></td>
       <td class="table-button"><a href="/vets/<%= vet.id %>">Details</a></td>
+      <td class="table-button"><a href="/appointments/vet/ <%= vet.id %>">Appointments</a></td>
       <td class="table-button"><a href="/vets/<%= vet.id %>/edit">Manage</a></td>
     </tr>
     <% end %>

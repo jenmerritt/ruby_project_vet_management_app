@@ -5,7 +5,7 @@
   <table class="details-table">
     <tr>
       <td class="table-button">Name:</td>
-      <td class="table-button"><%= @vet.name.capitalize %></td>
+      <td class="table-button"><%= @vet.name %></td>
     </tr>
     <tr>
       <td class="table-button">Mobile:</td>
@@ -13,7 +13,7 @@
     </tr>
     <tr>
       <td class="table-button">Animal Category:</td>
-      <td class="table-button"><%= @vet.animal_category %></td>
+      <td class="table-button"><%= @vet.animal_category.capitalize %></td>
     </tr>
     <tr>
       <td class="table-button">Animals:</td>
@@ -26,6 +26,7 @@
     </tr>
     <tr>
       <td class="table-button"><a href = "/vets/<%= @vet.id %>/edit">Update Details</a></td>
+      <td class="table-button"><a href="/appointments/vet/ <%= @vet.id %>">View Appointments</a></td>
     </tr>
   </table>
 </div>

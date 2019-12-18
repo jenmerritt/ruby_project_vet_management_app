@@ -17,11 +17,11 @@
     </tr>
     <tr>
       <td class="table-button">Category:</td>
-      <td class="table-button"><%= @animal.category %></td>
+      <td class="table-button"><%= @animal.category.capitalize %></td>
     </tr>
     <tr>
       <td class="table-button">Type:</td>
-      <td class="table-button"><%= @animal.type %></td>
+      <td class="table-button"><%= @animal.type.capitalize %></td>
     </tr>
     <tr>
       <td class="table-button">Owner:</td>
@@ -37,6 +37,7 @@
     </tr>
     <tr>
       <td class="table-button"><a href = "/animals/<%= @animal.id %>/edit">Update Details</a></td>
+      <td class="table-button"><a href="/appointments/animal/ <%= @animal.id %>">View Appointments</a></td>
     </tr>
   </table>
 </div>

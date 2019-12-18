@@ -1,6 +1,12 @@
 <div class= "page-head">
 <h1>Appointments for <%=@animal.name%></h1>
 </div>
+<div class="actions-nav">
+  <p>Actions:</p>
+  <ul>
+    <li class="appt-item"><a href="/animals/<%= @animal.id %>">View Treatment History</a></li>
+  </ul>
+</div>
 <div class="center-sub-head">
 <h2>Today</h2>
 </div>

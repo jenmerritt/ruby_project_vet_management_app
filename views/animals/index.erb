@@ -15,12 +15,12 @@
     <% if animal.status == "active"%>
     <tr>
       <td><%= animal.id %></td>
-      <td><%= animal.name %></td>
-      <td><%= animal.category %></td>
-      <td><%= animal.type %></td>
+      <td><%= animal.name.capitalize %></td>
+      <td><%= animal.category.capitalize %></td>
+      <td><%= animal.type.capitalize %></td>
       <td><%= animal.owner.display_name %></td>
       <td><%= animal.vet.name %></td>
-      <td class="table-button"><a href="/animals/<%= animal.id %>">Info</a></td>
+      <td class="table-button"><a href="/animals/<%= animal.id %>">Details</a></td>
       <td class="table-button"><a href="/animals/<%= animal.id %>/edit">Manage</a></td>
     </tr>
     <% end %>
@@ -44,12 +44,12 @@
     <% if animal.status == "inactive"%>
     <tr>
       <td><%= animal.id %></td>
-      <td><%= animal.name %></td>
-      <td><%= animal.category %></td>
-      <td><%= animal.type %></td>
+      <td><%= animal.name.capitalize %></td>
+      <td><%= animal.category.capitalize %></td>
+      <td><%= animal.type.capitalize %></td>
       <td><%= animal.owner.display_name %></td>
       <td><%= animal.vet.name %></td>
-      <td class="table-button"><a href="/animals/<%= animal.id %>">Info</a></td>
+      <td class="table-button"><a href="/animals/<%= animal.id %>">Details</a></td>
       <td class="table-button"><a href="/animals/<%= animal.id %>/edit">Manage</a></td>
     </tr>
     <% end %>
