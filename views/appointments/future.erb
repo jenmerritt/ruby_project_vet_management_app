@@ -24,7 +24,7 @@
       <% date = Date.parse(date_string) %>
       <% if date > Date.today %>
         <tr>
-          <td><%= appointment.date %></td>
+          <td><%= appointment.display_date(appointment.date) %></td>
           <td><%= appointment.time %></td>
           <td><a href="/appointments/vet/ <%= appointment.vet_id %>"><%= appointment.vet.name %></a></td>
           <td><a href="/appointments/animal/ <%= appointment.animal_id %>"><%= appointment.animal.name %></a></td>

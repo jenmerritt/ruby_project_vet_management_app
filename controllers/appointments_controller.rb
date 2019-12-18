@@ -33,6 +33,8 @@ end
 get '/appointments/date/:date' do
   @date = params[:date]
   @date_hash = Date.parse(@date)
+  heading_date = Date.parse(@date)
+  @date_string = "#{heading_date.day}/#{heading_date.month}/#{heading_date.year}"
   @appointments = Appointment.all
   erb (:"appointments/date")
 end

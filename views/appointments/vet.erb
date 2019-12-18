@@ -15,7 +15,7 @@
     <% date = Date.parse(date_string) %>
       <% if date > Date.today %>
         <tr>
-          <td><%= appointment.date %></td>
+          <td><%= appointment.display_date(appointment.date) %></td>
           <td><%= appointment.time %></td>
           <td><a href="/appointments/animal/ <%= appointment.animal_id %>"><%= appointment.animal.name %></td>
           <td class="table-button td-border-left"><a href="/appointments/<%= appointment.id %>/edit">Manage</a></td>
@@ -35,7 +35,7 @@
       <th>Patient</th>
     <% for appointment in @appointments %>
         <tr>
-          <td><%= appointment.date %></td>
+          <td><%= appointment.display_date(appointment.date) %></td>
           <td><%= appointment.time %></td>
           <td><a href="/appointments/animal/ <%= appointment.animal_id %>"><%= appointment.animal.name %></td>
           <td class="table-button td-border-left"><a href="/appointments/<%= appointment.id %>/edit">Manage</a></td>
@@ -57,7 +57,7 @@
     <% date = Date.parse(date_string) %>
       <% if date < Date.today %>
         <tr>
-          <td><%= appointment.date %></td>
+          <td><%= appointment.display_date(appointment.date) %></td>
           <td><%= appointment.time %></td>
           <td><a href="/appointments/animal/ <%= appointment.animal_id %>"><%= appointment.animal.name %></td>
           <td class="table-button td-border-left"><a href="/appointments/<%= appointment.id %>/edit">Manage</a></td>
