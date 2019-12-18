@@ -28,12 +28,21 @@ post '/appointments/new' do
   erb (:"appointments/create")
 end
 
-# list all appointments for today
+# list all appointments on a specific date
 
-get '/appointments/today' do
+get '/appointments/date/:date' do
+  @date = params[:date]
+  @date_hash = Date.parse(@date)
   @appointments = Appointment.all
-  erb (:"appointments/today")
+  erb (:"appointments/date")
 end
+
+# refactored above
+# get '/appointments/date/date/:date' do
+#   @date = params[:date]
+#   @appointments = Appointment.all
+#   erb(:"appointments/date")
+# end
 
 # list all appointments in the past
 
@@ -63,14 +72,6 @@ get '/appointments/animal/:id' do
   @animal = Animal.find(params[:id])
   @appointments = @animal.appointments
   erb (:"appointments/animal")
-end
-
-# list all appointments on a specific date
-
-get '/appointments/date/:date' do
-  @date = params[:date]
-  @appointments = Appointment.all
-  erb(:"appointments/date")
 end
 
 # edit and update - amend an appointment
