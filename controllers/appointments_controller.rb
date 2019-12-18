@@ -89,3 +89,11 @@ post '/appointments/:id/edit' do
   Appointment.new(params).update()
   erb (:"appointments/create")
 end
+
+# destroy appointment
+
+post '/appointments/:id/delete' do
+  appointment = Appointment.find(params[:id])
+  appointment.delete
+  erb(:"appointments/destroy")
+end

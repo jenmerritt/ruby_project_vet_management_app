@@ -90,9 +90,9 @@ class Appointment
     return vet
   end
 
-  def self.delete(id)
+  def delete()
     sql = "DELETE FROM appointments where id = $1;"
-    values = [id]
+    values = [@id]
     SqlRunner.run(sql, values)
   end
 
