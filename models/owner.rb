@@ -38,7 +38,7 @@ class Owner
   end
 
   def self.all()
-    sql = "SELECT * FROM owners;"
+    sql = "SELECT * FROM owners ORDER BY last_name ASC;"
     results = SqlRunner.run(sql)
     owners = map_items(results)
     return owners

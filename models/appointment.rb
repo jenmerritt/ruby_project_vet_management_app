@@ -50,7 +50,7 @@ class Appointment
   end
 
   def self.all()
-    sql = "SELECT * FROM appointments;"
+    sql = "SELECT * FROM appointments ORDER BY date DESC, time ASC;"
     results = SqlRunner.run(sql)
     appointments = map_items(results)
     return appointments
