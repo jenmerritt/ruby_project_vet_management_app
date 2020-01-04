@@ -1,4 +1,10 @@
 <div class="page-head">
-  <h1>Appointment Deleted.</h1>
+  <h1>Appointment Deleted</h1>
 </div>
-<p class="back"><< <a href="/appointments">back to appointments</a></p>
+<div class="actions-nav">
+  <p>Actions:</p>
+  <ul>
+    <li class="appt-item"><a href="/appointments/date/<%= Date.today %>">View Appointments</a></li>
+    <li class="appt-item"><a href="/appointments/new">Add Appointment</a></li>
+  </ul>
+</div>

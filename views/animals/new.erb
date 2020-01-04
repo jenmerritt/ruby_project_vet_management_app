@@ -10,25 +10,25 @@
 <div class="details-wrapper">
 <form method="post" actions="/animals">
   <input type="hidden" id="status" name="status" value="active">
-  <label for="name">Name</label>
-  <input type="text" name="name">
+  <label for="name">Name*</label>
+  <input type="text" name="name" required>
   <br>
-  <label for="dob">Date of Birth</label>
-  <input type="text" name="dob">
+  <label for="dob">Date of Birth*</label>
+  <input type="text" name="dob" required>
   <br>
-  <label for="category">Category</label>
-  <select name="category">
-    <option value="null">Select Category</option>
+  <label for="category">Category*</label>
+  <select name="category" required>
+    <option value="" disabled selected>Select Category</option>
     <option value="Large">Large</option>
     <option value="Small">Small</option>
   </select>
   <br>
-  <label for="type">Type</label>
-  <input type="text" name="type">
+  <label for="type">Type*</label>
+  <input type="text" name="type" required>
   <br>
-  <label for="owner_id">Owner</label>
-  <select name="owner_id">
-    <option value="null">Select Owner</option>
+  <label for="owner_id">Owner*</label>
+  <select name="owner_id" required>
+    <option value="" disabled selected>Select Owner</option>
     <% for owner in @owners %>
     <% if owner.status == "active" %>
     <option value="<%=owner.id%>"><%= owner.display_name %></option>
@@ -36,9 +36,9 @@
     <% end %>
   </select>
   <br>
-  <label for="vet_id">Vet</label>
-  <select name="vet_id">
-    <option value="null">Select Vet</option>
+  <label for="vet_id">Vet*</label>
+  <select name="vet_id" required>
+    <option value="" disabled selected>Select Vet</option>
     <% for vet in @vets %>
     <option value="<%=vet.id%>"><%= vet.name %></option>
     <% end %>
