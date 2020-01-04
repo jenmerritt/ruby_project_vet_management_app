@@ -15,7 +15,7 @@
       <th>Animal Category</th>
     <% for vet in @vets %>
     <tr>
-      <td><%= vet.name.capitalize %></td>
+      <td><%= vet.name %></td>
       <td><%= vet.mobile %></td>
       <td><%= vet.animal_category.capitalize %></td>
       <td class="table-button td-border-left"><a href="/vets/<%= vet.id %>">Details</a></td>

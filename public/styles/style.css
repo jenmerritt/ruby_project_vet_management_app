@@ -105,6 +105,13 @@ h1{
   text-align: center
 }
 
+/* Vet page heading */
+
+.vet-detail-head {
+  text-align:center;
+  color: #417a41;
+}
+
 /* Homepage */
 
 .flex-container{

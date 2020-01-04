@@ -9,7 +9,6 @@ Animal.delete_all()
 Vet.delete_all()
 Owner.delete_all()
 
-
 ######################
 # OWNERS
 ########################
@@ -135,7 +134,8 @@ owner10.save()
 vet1 = Vet.new({
   "name" => "Jack Bishop",
   "mobile" => "01234567890",
-  "animal_category" => "large"
+  "animal_category" => "large",
+  "status" => "active"
   })
 
 vet1.save()
@@ -143,7 +143,8 @@ vet1.save()
 vet2 = Vet.new({
   "name" => "Nikki Smith",
   "mobile" => "01234567890",
-  "animal_category" => "small"
+  "animal_category" => "small",
+  "status" => "active"
   })
 
 vet2.save()
@@ -151,7 +152,8 @@ vet2.save()
 vet3 = Vet.new({
   "name" => "Julia Fields",
   "mobile" => "01234567890",
-  "animal_category" => "large"
+  "animal_category" => "large",
+  "status" => "active"
   })
 
 vet3.save()
@@ -159,7 +161,8 @@ vet3.save()
 vet4 = Vet.new({
   "name" => "Will Evans",
   "mobile" => "01234567890",
-  "animal_category" => "small"
+  "animal_category" => "small",
+  "status" => "active"
   })
 
 vet4.save()
@@ -167,7 +170,8 @@ vet4.save()
 vet5 = Vet.new({
   "name" => "Laura Williams",
   "mobile" => "01234567890",
-  "animal_category" => "small"
+  "animal_category" => "small",
+  "status" => "active"
   })
 
 vet5.save()

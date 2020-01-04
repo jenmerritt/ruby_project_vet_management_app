@@ -7,7 +7,8 @@ CREATE TABLE vets (
   id SERIAL primary key,
   name VARCHAR(255),
   mobile VARCHAR(255),
-  animal_category VARCHAR(255)
+  animal_category VARCHAR(255),
+  status VARCHAR(255)
 );
 
 CREATE TABLE owners (

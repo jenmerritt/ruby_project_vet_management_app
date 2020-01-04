@@ -1,8 +1,18 @@
 <div class= "page-head">
   <h1>Animal Name: <%= @animal.name %> </h1>
 </div>
+<div class="actions-nav">
+  <p>Actions:</p>
+  <ul>
+    <li class="appt-item"><a href="/appointments/animal/ <%= @animal.id %>">View Appointments</a></li>
+  </ul>
+</div>
 <div class="details-wrapper">
   <table class="details-table">
+    <tr>
+      <td class="table-button">Status:</td>
+      <td class="table-button"><%= @animal.status.capitalize %></td>
+    </tr>
     <tr>
       <td class="table-button">Patient ID:</td>
       <td class="table-button"><%= @animal.id %></td>
@@ -37,7 +47,6 @@
     </tr>
     <tr>
       <td class="table-button"><a href = "/animals/<%= @animal.id %>/edit">Update Details</a></td>
-      <td class="table-button"><a href="/appointments/animal/ <%= @animal.id %>">View Appointments</a></td>
     </tr>
   </table>
 </div>

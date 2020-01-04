@@ -4,13 +4,14 @@ require_relative('./animal')
 class Vet
 
   attr_reader(:id)
-  attr_accessor(:name, :mobile, :animal_category)
+  attr_accessor(:name, :mobile, :animal_category, :status)
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
     @mobile = options['mobile']
     @animal_category = options['animal_category']
+    @status = options['status']
   end
 
   def save()
@@ -18,14 +19,15 @@ class Vet
     (
       name,
       mobile,
-      animal_category
+      animal_category,
+      status
     )
     VALUES
     (
-      $1, $2, $3
+      $1, $2, $3, $4
     )
     RETURNING id;"
-    values = [@name, @mobile, @animal_category]
+    values = [@name, @mobile, @animal_category, @status]
     results = SqlRunner.run(sql, values)
     @id = results[0]['id'].to_i
   end
@@ -68,13 +70,14 @@ class Vet
     UPDATE vets SET (
       name,
       mobile,
-      animal_category
+      animal_category,
+      status
     ) =
     (
-      $1, $2, $3
+      $1, $2, $3, $4
     )
-    WHERE id = $4;"
-    values = [@name, @mobile, @animal_category, @id]
+    WHERE id = $5;"
+    values = [@name, @mobile, @animal_category, @id, @status]
     SqlRunner.run(sql, values)
   end
 

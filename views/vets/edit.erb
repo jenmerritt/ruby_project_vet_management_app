@@ -15,6 +15,12 @@
     <option value="large" <%= 'selected' if @vet.animal_category == "large" %>>Large</option>
   </select>
   <br>
+  <label for="status">Status</label>
+  <select name="status">
+    <option value="active" <%= 'selected' if @vet.status == "active" %>>Active</option>
+    <option value="inactive" <%= 'selected' if @vet.status == "inactive" %>>Inactive</option>
+  </select>
+  <br>
   <input type="submit" value="Update" class="buttons">
 </form>
 </div>

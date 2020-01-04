@@ -3,12 +3,7 @@
 </div>
 <div class="details-wrapper">
 <form method="post" actions="/animals">
-  <label for="status">Status</label>
-  <select name="status">
-    <option value="active">Active</option>
-    <option value="inactive">Inactive</option>
-  </select>
-  <br>
+  <input type="hidden" id="status" name="status" value="active">
   <label for="name">Name</label>
   <input type="text" name="name">
   <br>

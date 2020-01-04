@@ -1,6 +1,12 @@
 <div class= "page-head">
 <h1>Vet Details</h1>
 </div>
+<div class="actions-nav">
+  <p>Actions:</p>
+  <ul>
+    <li class="appt-item"><a href="/appointments/vet/ <%= @vet.id %>">View Appointments</a></li>
+  </ul>
+</div>
 <div class="details-wrapper">
   <table class="details-table">
     <tr>
@@ -16,17 +22,31 @@
       <td class="table-button"><%= @vet.animal_category.capitalize %></td>
     </tr>
     <tr>
-      <td class="table-button">Animals:</td>
-      <td class="table-button">
-        <% animals = @vet.animals %>
-        <% for animal in animals %>
-        <a href="/animals/<%= animal.id %>"><%= "#{animal.name} (Patient ID:#{animal.id})" %></a>
-      <br/>
-      <% end %></td>
+      <td class="table-button">Status:</td>
+      <td class="table-button"><%= @vet.status.capitalize %></td>
     </tr>
     <tr>
       <td class="table-button"><a href = "/vets/<%= @vet.id %>/edit">Update Details</a></td>
-      <td class="table-button"><a href="/appointments/vet/ <%= @vet.id %>">View Appointments</a></td>
     </tr>
   </table>
+</div>
+<h1 class="vet-detail-head">Animals</h1>
+<div class="details-wrapper">
+  <table class="details-table">
+      <tr>
+        <th>Patient ID</th>
+        <th>Name</th>
+      </tr>
+      <% animals = @vet.animals %>
+      <% for animal in animals %>
+      <tr>
+        <td class="table-button">
+          <%= animal.id %>
+        </td>
+        <td class="table-button">
+          <a href="/animals/<%= animal.id %>"><%= animal.name %></a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
 </div>
