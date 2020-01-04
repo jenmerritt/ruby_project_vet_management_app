@@ -10,6 +10,13 @@ get '/vets' do
   erb(:"vets/index")
 end
 
+# inactive vets page
+
+get '/vets/inactive' do
+  @vets = Vet.all
+  erb (:"vets/index_inactive")
+end
+
 # new and create - add vet
 
 get '/vets/new' do

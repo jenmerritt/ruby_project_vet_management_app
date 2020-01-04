@@ -77,7 +77,7 @@ class Vet
       $1, $2, $3, $4
     )
     WHERE id = $5;"
-    values = [@name, @mobile, @animal_category, @id, @status]
+    values = [@name, @mobile, @animal_category, @status, @id]
     SqlRunner.run(sql, values)
   end
 

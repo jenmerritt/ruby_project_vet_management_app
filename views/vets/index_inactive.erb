@@ -1,0 +1,24 @@
+<div class= "page-head">
+<h1>Inactive Vets</h1>
+</div>
+<div class="table-wrapper">
+  <table id="vets-table">
+    <tr>
+      <th>Name</th>
+      <th>Mobile</th>
+      <th>Animal Category</th>
+      <% for vet in @vets %>
+      <% if vet.status == "inactive"%>
+    <tr>
+      <td><%= vet.name %></td>
+      <td><%= vet.mobile %></td>
+      <td><%= vet.animal_category.capitalize %></td>
+      <td class="table-button td-border-left"><a href="/vets/<%= vet.id %>/edit">Manage</a></td>
+    </tr>
+    <% end %>
+    <% end %>
+  </table>
+</div>
+<ul>
+<li class="link-bottom"><a href="/vets">View Active Vets</a></li>
+</ul>

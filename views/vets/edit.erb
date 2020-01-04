@@ -3,6 +3,12 @@
 </div>
 <div class="details-wrapper">
 <form method="post" actions="/vets">
+  <label for="status">Status</label>
+  <select name="status">
+    <option value="active" <%= 'selected' if @vet.status == "active" %>>Active</option>
+    <option value="inactive" <%= 'selected' if @vet.status == "inactive" %>>Inactive</option>
+  </select>
+  <br>
   <label for="name">Name</label>
   <input type="text" name="name" value="<%= @vet.name %>">
   <br>
@@ -13,12 +19,6 @@
   <select name="animal_category">
     <option value="small" <%= 'selected' if @vet.animal_category == "small" %>>Small</option>
     <option value="large" <%= 'selected' if @vet.animal_category == "large" %>>Large</option>
-  </select>
-  <br>
-  <label for="status">Status</label>
-  <select name="status">
-    <option value="active" <%= 'selected' if @vet.status == "active" %>>Active</option>
-    <option value="inactive" <%= 'selected' if @vet.status == "inactive" %>>Inactive</option>
   </select>
   <br>
   <input type="submit" value="Update" class="buttons">

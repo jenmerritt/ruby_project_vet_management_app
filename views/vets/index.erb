@@ -13,7 +13,8 @@
       <th>Name</th>
       <th>Mobile</th>
       <th>Animal Category</th>
-    <% for vet in @vets %>
+      <% for vet in @vets %>
+      <% if vet.status == "active"%>
     <tr>
       <td><%= vet.name %></td>
       <td><%= vet.mobile %></td>
@@ -23,5 +24,9 @@
       <td class="table-button"><a href="/vets/<%= vet.id %>/edit">Manage</a></td>
     </tr>
     <% end %>
+    <% end %>
   </table>
 </div>
+<ul>
+<li class="link-bottom"><a href="/vets/inactive">View Inactive Vets</a></li>
+</ul>

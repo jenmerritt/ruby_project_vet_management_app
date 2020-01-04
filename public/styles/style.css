@@ -325,6 +325,29 @@ label{
   padding-right:20px;
 }
 
+.link-bottom a {
+  color: #417a41;
+  font-size:12pt;
+  text-decoration: none;
+}
+
+.link-bottom a:hover{
+  color: #417a41;
+  font-size:12pt;
+  text-decoration: underline;
+}
+
+.link-bottom a:visited{
+  color: #417a41;
+  font-size:12pt;
+  text-decoration: none;
+}
+
+
+.link-bottom {
+  display: inline-block;
+}
+
 /* footer */
 
 #footer {
