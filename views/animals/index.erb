@@ -27,6 +27,7 @@
       <td><%= animal.owner.display_name %></td>
       <td><%= animal.vet.name %></td>
       <td class="table-button td-border-left"><a href="/animals/<%= animal.id %>">Details</a></td>
+      <td class="table-button"><a href="appointments/animal/<%= animal.id %>">Appointments</a></td>
       <td class="table-button"><a href="/animals/<%= animal.id %>/edit">Manage</a></td>
     </tr>
     <% end %>

@@ -25,7 +25,7 @@
           <td><%= appointment.display_date(appointment.date) %></td>
           <td><%= appointment.time %></td>
           <td><a href="/appointments/vet/ <%= appointment.vet_id %>"><%= appointment.vet.name %></a></td>
-          <td><a href="/appointments/animal/ <%= appointment.animal_id %>"><%= appointment.animal.name %></td>
+          <td><a href="/animals/ <%= appointment.animal_id %>"><%= appointment.animal.name %></td>
           <td  class="table-button td-border-left"><a href="/appointments/<%= appointment.id %>/edit">Manage</a></td>
         </tr>
     <% end %>
