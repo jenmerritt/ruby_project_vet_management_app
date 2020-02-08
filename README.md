@@ -5,13 +5,13 @@ This project was completed during my time studying at CodeClan. The project was 
 I chose to build a Vet Practice Management App from a choice of briefs (See Brief below)
 
 Dashboard:
-![Image of Dashboard](https://github.com/jenmerritt/ruby_project_vet_management_app/tree/master/public/images/dashboard.png)
+![Image of Dashboard](dashboard.png)
 
 View Appointments:
-![Image of Appointments](https://github.com/jenmerritt/ruby_project_vet_management_app/tree/master/public/images/appointments-list.png)
+![Image of Appointments](appointments-list.png)
 
 Create Appointment:
-![Image of Appointments Form](https://github.com/jenmerritt/ruby_project_vet_management_app/tree/master/public/images/add-appointment.png)
+![Image of Appointments Form](add-appointment.png)
 
 ## Approach:
 - Initial UX session: proto-personas, user stories and user journeys.
