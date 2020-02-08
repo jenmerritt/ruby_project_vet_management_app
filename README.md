@@ -1,6 +1,6 @@
 # Vet Practice Management App
 
-This project was completed during my time studying at CodeClan. The project was individual and based on Ruby.
+This project was completed during my time studying at CodeClan. The project was individual and based on Ruby. I had 5 days to complete the project and then present it.
 
 I chose to build a Vet Practice Management App from a choice of briefs (See Brief below)
 
