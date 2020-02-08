@@ -38,7 +38,7 @@ get '/appointments/date/:date' do
   erb (:"appointments/date")
 end
 
-# refactored above
+# refactored above, keeping to show learning.
 # get '/appointments/date/date/:date' do
 #   @date = params[:date]
 #   @appointments = Appointment.all
