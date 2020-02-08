@@ -1,4 +1,3 @@
-require('pry')
 require_relative( '../db/sql_runner' )
 
 class Appointment

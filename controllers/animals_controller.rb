@@ -1,10 +1,8 @@
 require('sinatra')
-require('sinatra/contrib/all')
-require('pry')
+# require('sinatra/contrib/all') if development?
 require_relative('../models/animal')
 require_relative('../models/owner')
 require_relative('../models/vet')
-also_reload('../models/*')
 
 # index - animals listing page
 

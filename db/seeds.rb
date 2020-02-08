@@ -2,7 +2,6 @@ require_relative('../models/appointment.rb')
 require_relative('../models/animal.rb')
 require_relative('../models/vet.rb')
 require_relative('../models/owner.rb')
-require('pry')
 
 Appointment.delete_all()
 Animal.delete_all()
@@ -528,8 +527,3 @@ appointment18 = Appointment.new({
   })
 
 appointment18.save()
-
-
-
-binding.pry
-nil
