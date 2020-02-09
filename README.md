@@ -2,7 +2,9 @@
 
 This project was completed during my time studying at CodeClan. The project was individual and based on Ruby. I had 5 days to complete the project and then present it.
 
-I chose to build a Vet Practice Management App from a choice of briefs (See Brief below)
+I chose to build a Vet Practice Management App from a choice of briefs (See Brief below).
+
+App can be viewed on Heroku via: https://clover-farm-vets.herokuapp.com
 
 Dashboard:
 ![Image of Dashboard](dashboard.png)
@@ -23,6 +25,7 @@ Create Appointment:
 ## Challenges and Learnings:
 - How to focus time and efforts on individual project with lots of ideas. Using the Trello board to manage user stories meant I had a clear list of tasks each day and was not distracted by the 'noise' of other ideas.
 - Had not used Dates Class before, so had to learn how to integrate this into the project for appointments. Used a sandbox project to figure out how the Dates class worked, and how I could use the controllers to display appointments based on date, before implementing into the project.
+- I deployed the app on Heroku. This is not something that is taught in the course itself, so I had to use the Heroku docs and other online resources, migrate the database and update the database settings as required by Heroku. It was very rewarding once the app was live - my first real deployment!
 
 ## The Brief:
 
@@ -52,12 +55,3 @@ It must NOT use:
 - JavaScript. At all. Don't even think about it.
 - Any pre-built CSS libraries, such as Bootstrap.
 - Authentication. Assume that the user already has secure access to the app.
-
-## Running Instructions
-
-- Clone from GitHub
-- Requires: postgresql, ruby
-- Create database as per 'dbname' in db/sql_runner file
-- run psql for database and db/vet_practice.sql to create tables
-- run app via ruby file app.rb ('ruby app.rb')
-- App is loaded via localhost using Sinatra
